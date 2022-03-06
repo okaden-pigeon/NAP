@@ -2,3 +2,4 @@
 
 Entiku
 kasshii
+Taichi
