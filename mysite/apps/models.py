@@ -2,11 +2,12 @@ from django.db import models
 
 # Usersテーブルの情報
 class Users(models.Model):
-  user_name = models.CharField(max_length=30)
+  user_name = models.CharField(max_length=20)
   user_email = models.EmailField()
   user_pass = models.CharField(max_length = 30)
   university = models.IntegerField()
-  icon = models.ImageField()
+  icon = models.ImageField(
+    upload_to='../images')
   class Meta:
     db_table = "Users"
 
@@ -19,10 +20,13 @@ class Universities(models.Model):
 
 # Itemsテーブルの情報
 class Items(models.Model):
-  item_name = models.CharField(max_length = 30)
-  item_description = models.CharField(max_length=200)
+  item_name = models.CharField(max_length = 40)
+  item_description = models.CharField(max_length=500)
   created_at = models.DateTimeField()
   item_eval = models.IntegerField()
+  is_deal = models.BooleanField(
+    default = False
+  )
   class Meta:
     db_table = "Items"
 
