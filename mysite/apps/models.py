@@ -23,7 +23,9 @@ class Items(models.Model):
   item_name = models.CharField(max_length = 40)
   item_description = models.CharField(max_length=500)
   created_at = models.DateTimeField()
-  item_eval = models.IntegerField()
+  item_eval = models.IntegerField(
+    default = 0
+  )
   is_deal = models.BooleanField(
     default = False
   )
