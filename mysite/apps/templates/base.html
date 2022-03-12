@@ -14,37 +14,28 @@
   </title>
 </head>
 <body>
-  <div class="ui stackable inverted menu">
-    <div class="header item">
-      IT学習ちゃんねる
-    </div>
-    <a class="item">
-      このサイトはなに？
-    </a>
-    <div class="right menu">
-      <a class="item">
-        Log in
-      </a>
-      <a class="item">
-        Sign up
-      </a>
-    </div>
-  </div>
-
-  <div class="ui container" style="min-height:100vh;">
-    {% block content %}
-    {% endblock %}
-  </div>
-  <div class="ui inverted stackable footer segment">
-    <div class="ui container center aligned">
-      <div class="ui horizontal inverted small divided link list">
-        <a class="item">© 2019 Django学習ちゃんねる(仮)</a>
-        <a class="item">利用規約</a>
-        <a class="item">プライバシーポリシー</a>
+  <header class="site-header">
+    <div class="wrapper site-header__wrapper">
+      <div class="site-header__start">
+        <a href="#" class="brand">Brand</a>
+        </div>
+      <div class="site-header__middle">
+        <nav class="nav">
+          <button class="nav__toggle" aria-expanded="false" type="button">
+            menu
+          </button>
+          <ul class="nav__wrapper">
+            <li class="nav__item"><a href="#">Home</a></li>
+            <li class="nav__item"><a href="#">About</a></li>
+            <li class="nav__item"><a href="#">Services</a></li>
+            <li class="nav__item"><a href="#">Hire us</a></li>
+            <li class="nav__item"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__end">
+        <a class="button" href="#">Sign in</a>
       </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="{% static 'js/semantic.js' %}"></script>
-  {% block js %}{% endblock %}
+  </header>
 </body>
