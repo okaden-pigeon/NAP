@@ -7,10 +7,13 @@
 {% block content %}
     <div>{{message}}</div>
 {% endblock %}
-  <title>ページのタイトル</title>
+  <title>{% block title %}{% endblock title %}</title>
 </head>
 
 <body>
     <h1>Hello World!</h1>
+    {% block content %}
+
+    {% endblock %}
 </body>
 </html>
