@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="ja">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  {% block meta_tag %}{% endblock %}
+  <link href="{% '../static/css/pc.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% '../static/css/smartphone.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% '../static/css/tablet.css' %}" rel="stylesheet" type="text/css">
+  {% block css %}{% endblock %}
+  <title>{% block title %}サービス名{% endblock %} <!--サービス名入力--></title>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper site-header__wrapper">
+      <div class="site-header__start">
+        <a href="#" class="brand">Brand</a>
+        </div>
+      <div class="site-header__middle">
+        <nav class="nav">
+          <button class="nav__toggle" aria-expanded="false" type="button">
+            menu
+          </button>
+          <ul class="nav__wrapper">
+            <li class="nav__item"><a href="index.html">ホーム</a></li>
+            <li class="nav__item"><a href="mylist.html">出品一覧</a></li>
+            <li class="nav__item"><a href="user_edit.html">アカウント</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-header__end">
+        <a class="button" href="product_create.html">出品</a>
+      </div>
+    </div>
+  </header>
+</body>
+</html>

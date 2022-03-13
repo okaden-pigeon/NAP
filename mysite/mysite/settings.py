@@ -130,6 +130,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# staticファイルを読み込むため追記（柏原）
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 # 画像保存のため追記
 MEDIA_ROOT = os.path.join(BASE_DIR,"images")
 
