@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
- 
-  <title>ページのタイトル</title>
+{% extends 'app/base.html' %}
+{% block content %}
+    <div>{{message}}</div>
+{% endblock %}
+  <title>{% block title %}{% endblock title %}</title>
 </head>
- 
+
 <body>
     <h1>Hello World!</h1>
+    {% block content %}
+
+    {% endblock %}
 </body>
 </html>
