@@ -13,27 +13,18 @@
   <title>{% block title %}サービス名{% endblock %} <!--サービス名入力--></title>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrapper site-header__wrapper">
-      <div class="site-header__start">
-        <a href="#" class="brand">Brand</a>
-        </div>
-      <div class="site-header__middle">
-        <nav class="nav">
-          <button class="nav__toggle" aria-expanded="false" type="button">
-            menu
-          </button>
-          <ul class="nav__wrapper">
-            <li class="nav__item"><a href="index.html">ホーム</a></li>
-            <li class="nav__item"><a href="mylist.html">出品一覧</a></li>
-            <li class="nav__item"><a href="user_edit.html">アカウント</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="site-header__end">
-        <a class="button" href="product_create.html">出品</a>
-      </div>
-    </div>
-  </header>
+<header>
+  <div class="inner">
+    <p class="logo"><a class="over" href="#">COMPANY</a></p>
+    <ul class="navi">
+      <li><a href="/feature/">選ばれる理由</a></li>
+      <li><a href="/service/">サービス</a></li>
+      <li><a href="/case/">制作事例</a></li>
+      <li><a href="/company/">会社案内</a></li>
+      <li><a href="/recruit/">採用情報</a></li>
+    </ul>
+  </div>
+  <button class="sp-navi-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="menu">MENU</span><span class="close">CLOSE</span></button>
+</header>
 </body>
 </html>
