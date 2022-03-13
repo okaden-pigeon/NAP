@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-
+# django学習帳 1-4
     'base',
     'DIRS': [os.path.join(BASE_DIR, 'templates')],
 ]
