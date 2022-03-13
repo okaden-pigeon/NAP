@@ -22,5 +22,11 @@ class MylistView(generic.TemplateView):
 class MyhistoryView(generic.TemplateView):
     template_name = "myhistory.html"
 
+class UserEditView(generic.TemplateView):
+    template_name = "user_edit.html"
+
+class MyhistoryView(generic.TemplateView):
+    template_name = "myhistory.html"
+
 class MypageView(generic.TemplateView):
     template_name = "mypage.html"
