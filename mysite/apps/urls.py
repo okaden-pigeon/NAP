@@ -11,4 +11,5 @@ urlpatterns = [
     path('mylist/', views.MylistView.as_view(), name="mylist"),
     path('myhistory/', views.MyhistoryView.as_view(), name="myhistory"),
     path('mypage/', views.MypageView.as_view(), name="mypage"),
+    path('accounts/', include('accounts.urls')), # django学習帳 3-1
 ]
