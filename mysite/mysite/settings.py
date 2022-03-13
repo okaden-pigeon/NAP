@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
 
     'base',
+    'accounts', # django学習帳 3-1
 ]
 
 MIDDLEWARE = [
