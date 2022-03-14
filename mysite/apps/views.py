@@ -27,3 +27,6 @@ class ProductView(generic.TemplateView):
 
 class UserEditView(generic.TemplateView):
     template_name = "user_edit.html"
+
+class UserRegisterView(generic.TemplateView):
+    template_name = "user_register.html"
