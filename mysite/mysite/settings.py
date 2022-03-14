@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
 
-    'base',
     'apps',
     'accounts', # django学習帳 3-1
 ]
