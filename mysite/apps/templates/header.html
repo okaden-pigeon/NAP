@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/header-9.css' %}" />
   </head>
-<header class="site-header"> <!-- https://github.com/shadeed/headers-css/blob/master/header-9.html#L15 -->
-  <div class="wrapper site-header__wrapper">
-    <div class="site-header__start">
-      <a href="/" class="brand">サービス名</a>
+  <body>
+    <header class="site-header"> <!-- https://github.com/shadeed/headers-css/blob/master/header-9.html#L15 -->
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="/" class="brand">サービス名</a>
+        </div>
+        {% block nav_bar %}
+        {% endblock %}
       </div>
-    {% block nav_bar %}
-    {% endblock %}
-  </div>
-</header>
-<script type="text/javascript" src="header-9.js"></script>
+    </header>
+    <script type="text/javascript" src="header-9.js"></script>
+  </body>
