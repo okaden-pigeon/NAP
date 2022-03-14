@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/header-9.css' %}" />
   </head>
+<<<<<<< HEAD
   <header class="site-header"> <!-- https://github.com/shadeed/headers-css/blob/master/header-9.html#L15 -->
     <div class="wrapper site-header__wrapper">
       <div class="site-header__start">
@@ -24,3 +25,19 @@
   {% endblock %}
 
   <h1>team NAP</h1>
+=======
+  <body>
+    <header class="site-header"> <!-- https://github.com/shadeed/headers-css/blob/master/header-9.html#L15 -->
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="/" class="brand">サービス名</a>
+        </div>
+        {% block nav_bar %}
+        {% endblock %}
+      </div>
+    </header>
+    <script type="text/javascript" src="header-9.js"></script>
+    {% block content %}
+    {% endblock %}
+  </body>
+>>>>>>> 4e5c2032cc33b7d1edf9cc115e4c863e487edb56

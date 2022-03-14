@@ -10,6 +10,9 @@ class IndexView(generic.TemplateView):
 class LoginView(generic.TemplateView):
     template_name = "login.html"
 
+class MailRegisterView(generic.TemplateView):
+    template_name = "mail_register.html"
+
 class MyhistoryView(generic.TemplateView):
     template_name = "myhistory.html"
 
@@ -25,5 +28,11 @@ class ProductRecreateView(generic.TemplateView):
 class ProductView(generic.TemplateView):
     template_name = "product.html"
 
+class UniversityRegisterView(generic.TemplateView):
+    template_name = "university_register.html"
+
 class UserEditView(generic.TemplateView):
     template_name = "user_edit.html"
+
+class UserRegisterView(generic.TemplateView):
+    template_name = "user_register.html"
