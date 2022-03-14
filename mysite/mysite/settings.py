@@ -45,9 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-
-    'apps',
-    'accounts', # django学習帳 3-1
 ]
 
 MIDDLEWARE = [

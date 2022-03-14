@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 # django学習帳 1-3
 from django.urls import path, include
-import base
 
 urlpatterns = [
     path('admin/', admin.site.urls),
