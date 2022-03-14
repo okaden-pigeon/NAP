@@ -7,3 +7,8 @@
   <link rel="stylesheet" href="{% static 'css/reset.min.css' %}" />
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   <link rel="stylesheet" href="{% static 'css/header-9.css' %}" />
+{% block content %}
+    <div>{{message}}</div>
+{% endblock %}
+  <title>{% block title %}{% endblock title %}</title>
+</head>
