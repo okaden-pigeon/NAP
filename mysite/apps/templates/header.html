@@ -3,22 +3,8 @@
     <div class="site-header__start">
       <a href="/" class="brand">サービス名</a>
       </div>
-    <div class="site-header__middle">
-      <nav class="nav">
-        <button class="nav__toggle" aria-expanded="false" type="button">
-          menu
-        </button>
-        <ul class="nav__wrapper">
-        {% block nav_bar %}
-          <li class="nav__item"><a href="/">ホーム</a></li>
-          <li class="nav__item"><a href="/mylist">出品一覧</a></li>
-          <li class="nav__item"><a href="/user_edit.html">アカウント</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="site-header__end">
-      <a class="button" href="/product_create.html">出品</a>
-    </div>
+    {% block nav_bar %}>
+    {% endblock %}
   </div>
 </header>
 

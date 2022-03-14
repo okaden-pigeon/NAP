@@ -1,19 +1,19 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ja" class="no-js">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="{% static 'css/reset.min.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/header-9.css' %}" />
-{% block content %}
-    <div>{{message}}</div>
-{% endblock %}
-  <title>{% block title %}{% endblock title %}</title>
-</head>
+{% extends "header.html" %}
 
-<body>
-    {% include "header.html" %}
-</body>
-</html>
+{% block nav_bar %}
+    <div class="site-header__middle">
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          menu
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/">ホーム</a></li>
+          <li class="nav__item"><a href="/mylist">出品一覧</a></li>
+          <li class="nav__item"><a href="/user_edit.html">アカウント</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-header__end">
+      <a class="button" href="/product_create.html">出品</a>
+    </div>
+{% endblock %}
