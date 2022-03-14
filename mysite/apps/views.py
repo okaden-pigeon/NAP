@@ -7,6 +7,9 @@ from django.views import generic
 class IndexView(generic.TemplateView):
     template_name = "index.html"
 
+class LoginView(generic.TemplateView):
+    template_name = "login.html"
+
 class MyhistoryView(generic.TemplateView):
     template_name = "myhistory.html"
 
