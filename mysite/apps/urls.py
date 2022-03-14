@@ -11,6 +11,4 @@ urlpatterns = [
     path('product-recreate/', views.ProductRecreateView.as_view(), name="product_recreate"),
     path('product/', views.ProductView.as_view(), name="product"),
     path('useredit/', views.UserEditView.as_view(), name="user_edit"),
-
-    path('accounts/', include('accounts.urls')), # django学習帳 3-1
 ]
