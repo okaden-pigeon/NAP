@@ -1,4 +1,5 @@
 {% extends "header.html" %}
+{% load static %}
 
 {% block nav_bar %}
     <div class="site-header__middle">
@@ -17,4 +18,19 @@
       <a class="button" href="/product_create">出品</a>
     </div>
 {% endblock %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    <div id="dragDropArea">
+        <div class="drag-drop-inside">
+            <p class="drag-drop-buttons">
+                <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="photo" onChange="photoPreview(event)">
+            </p>
+            <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
+            <div id="previewArea"></div>
+        </div>
+    </div>
+    <button type="submit" name="submit" value="登録">画像を登録</button>
+</form>
+<script type="text/javascript" src="{% static 'js/product_image.js' %}"></script>
 
+{% endblock %}
