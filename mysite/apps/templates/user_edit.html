@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="ja" class="no-js">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
- 
-  <title>ページのタイトル</title>
-</head>
- 
-<body>
-    <h1>Hello World!</h1>
-</body>
-</html>
+{% extends "header.html" %}
+
+{% block nav_bar %}
+    <div class="site-header__middle">
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          menu
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/">ホーム</a></li>
+          <li class="nav__item"><a href="/mylist">出品一覧</a></li>
+          <li class="nav__item"><a href="/user_edit">アカウント</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-header__end">
+      <a class="button" href="/product_create">出品</a>
+    </div>
+{% endblock %}
