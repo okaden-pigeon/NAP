@@ -32,8 +32,8 @@
 </form>
 <form method="post">
     <p>商品名<br>
-    <input type="text" name="product_name" onkeyup="product_name_str_len();">
-    <div id="product_name_str_len">0文字</div></p>
+    <input id="area1" type="text" name="product_name" onkeyup="product_name_str_len();">
+    <div id="product_name_str_len">0/40文字</div></p>
     <p>商品の状態<br>
     <select name="condition" required>
       <option value="">選択してください</option>
@@ -56,8 +56,8 @@
     </select></p>
 
     <p>商品の説明<br>
-    <textarea id="area1" name="comment" cols="30" rows="3" onkeyup="product_explanation_str_len();"></textarea>
-    <div id="strLen">0文字</div></p>
+    <textarea id="area2" name="comment" cols="30" rows="3" max="500" onkeyup="product_explanation_str_len();"></textarea>
+    <div id="strLen">0/500文字</div></p>
 
 <script type="text/javascript" src="{% static 'js/product_image.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
