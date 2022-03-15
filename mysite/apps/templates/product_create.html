@@ -35,7 +35,8 @@
     <p>商品名<br>
     <input type="text" name="product_name"></p>
     <p>商品の説明<br>
-    <textarea name="comment" cols="30" rows="5"></textarea></p>
+    <textarea id="area1" name="comment" cols="30" rows="5" onkeyup="viewStrLen();></textarea></p>
+    <div id="strLen">0文字</div>
 
 <script type="text/javascript" src="{% static 'js/product_image.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/product_create.js' %}"></script>
