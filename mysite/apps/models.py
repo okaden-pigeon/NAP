@@ -7,7 +7,8 @@ class Users(models.Model):
   user_pass = models.CharField(max_length = 30)
   university = models.IntegerField()
   icon = models.ImageField(
-    upload_to='../images')
+    upload_to='./images'
+    )
   class Meta:
     db_table = "Users"
 
@@ -40,7 +41,7 @@ class Genres(models.Model):
 
 #Imagesテーブルの情報
 class Images(models.Model):
-  image = models.ImageField()
+  image = models.ImageField(upload_to='./images/')
   class Meta:
     db_table = "Images"
 
