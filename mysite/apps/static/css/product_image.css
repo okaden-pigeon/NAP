@@ -22,7 +22,7 @@
 .drag-drop-buttons input{
       margin: auto;
   }
-  
+
 .register_button {
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -33,4 +33,27 @@
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-align: center;
+  }
+
+.register_button svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  }
+
+.register_button span {
+  display: none;
+  }
+
+@media (min-width: 600px) {
+  .register_button span {
+    display: initial;
+    }
+ }
+
+  .register_button--icon {
+    min-width: initial;
+    padding: 0.5rem;
   }
