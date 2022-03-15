@@ -9,9 +9,8 @@
 
 #dragDropArea p{
   　  color: #4169e1;
-      font-weight: bold;
-      font-size: 14px;
-      font-size: 1.4em;
+      font-size: 10px;
+      font-size: 1em;
   }
 
 #dragDropArea .drag-drop-buttons{
