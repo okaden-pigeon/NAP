@@ -17,3 +17,15 @@
       <a class="button" href="/product_create">出品</a>
     </div>
 {% endblock %}
+
+{% block content %}
+  <!-- ユーザーの出品している商品を更新順で表示-->
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="商品画像">
+    <div class="card-body">
+      <h5 class="card-title">商品名</h5>
+      <a href="/product_recreate" class="btn btn-primary">更新</a>
+      <a href="#" class="btn btn-primary">削除</a>
+    </div>
+  </div>
+{% endblock %}
