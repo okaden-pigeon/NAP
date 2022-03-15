@@ -25,13 +25,12 @@ SECRET_KEY = 'django-insecure-rn&m2=i&4z*hf%%*(igjoo&9m6q=d$g090xm_aax5369051ad+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    "apps.apps.AppsConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'accounts.apps.AccountsConfig',
+    'apps.apps.AppsConfig',
 
     'django.contrib.sites',
     'allauth',
@@ -157,4 +157,6 @@ LOGIN_REDIRECT_URL = 'app:home'  # ログイン成功後の遷移先の指定
 ACCOUNT_LOGOUT_REDIRECT_URL = 'app:welcome'  # ログアウト成功後の遷移先の指定
  
 ACCOUNT_LOGOUT_ON_GET = True  # 確認を行わずログアウトする設定
+
+AUTH_USER_MODEL = 'acounts.CustomUser' #カスタムユーザーモデルを定義
  
