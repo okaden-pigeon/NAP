@@ -33,11 +33,16 @@
 <form method="post">
     <p>商品名<br>
     <input type="text" name="product_name"></p>
-    <select>
-      <option value="">表示されるテキスト</option>
-      <option value="選択肢2の値">表示されるテキスト</option>
-      <option value="選択肢3の値">表示されるテキスト</option>
-    </select>
+    <p>商品の状態<br>
+    <select name="condition" required>
+      <option value="">選択してください</option>
+      <option value="unused">新品、未使用</option>
+      <option value="almost_new">未使用に近い</option>
+      <option value="no_damage">目立った傷や汚れなし</option>
+      <option value="low_damage">やや傷や汚れあり</option>
+      <option value="middle_damage">傷や汚れあり</option>
+      <option value="high_damage">全体的に状態が悪い</option>
+    </select></p>
     <p>商品の説明<br>
     <textarea id="area1" name="comment" cols="30" rows="5" onkeyup="viewStrLen();"></textarea></p>
     <div id="strLen">0文字</div>
