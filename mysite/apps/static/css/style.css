@@ -75,5 +75,6 @@ body {
 
 /* product_create.html */
 #strLen {
-  color: #F#FF0000;
+  color: #FF0000;
+  display: inline-block;
 }
