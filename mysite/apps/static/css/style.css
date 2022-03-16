@@ -147,8 +147,8 @@ body {
     transform: translate(-50%,-50%);
     margin:0;
     font-size: 20px;
-    border: solid white 2px; /*線で囲う*/
-    padding: 7px;/*文字と線の間の余白*/
-    color: white;/*文字色*/
-    text-decoration: none;/*下線を表示させない*/
+    border: solid white 2px;
+    padding: 7px;
+    color: white;
+    text-decoration: none;
     }
