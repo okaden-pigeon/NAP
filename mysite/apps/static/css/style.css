@@ -113,7 +113,11 @@ body {
   border-right: 3px solid #333333;
 }
 
-.product_name{
+.product_name {
   font-size: 20px;
   font-size: 2.0rem;
+}
+
+#mypic {
+  position: relative;
 }
