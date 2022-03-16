@@ -141,7 +141,7 @@ body {
   #image_slide .slide_button_forward{
     position: absolute;
     top: 50%;
-    right: 1%;
+    right: 50%;
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
