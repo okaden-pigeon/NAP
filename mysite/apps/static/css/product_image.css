@@ -7,15 +7,10 @@
     text-align: center;
   }
 
-.drag-drop-info{
-    color: #0000FF;
-}
-
 #dragDropArea p{
-      color: #999;
-      font-weight: bold;
-      font-size: 14px;
-      font-size: 1.4em;
+  　  color: #4169e1;
+      font-size: 10px;
+      font-size: 1em;
   }
 
 #dragDropArea .drag-drop-buttons{
@@ -27,3 +22,84 @@
 .drag-drop-buttons input{
       margin: auto;
   }
+
+.register_button {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    color: #fff;
+    background-color: #2fa0f6;
+    min-width: 120px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+.register_button svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  }
+
+.register_button span {
+  display: none;
+  }
+
+@media (min-width: 600px) {
+  .register_button span {
+    display: initial;
+    }
+ }
+
+  .register_button--icon {
+    min-width: initial;
+    padding: 0.5rem;
+  }
+
+/* 出品するボタン */
+.product_register_submit_button {
+    margin-top: 20px;
+    font-size: 12px;
+    font-size: 1.2em;
+}
+
+.product_register_submit_button input {
+    margin: auto;
+}
+
+.product_register_submit_button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #fff;
+  background-color: #2fa0f6;
+  min-width: 120px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.product_register_submit_button svg {
+display: inline-block;
+vertical-align: middle;
+width: 24px;
+height: 24px;
+fill: #fff;
+}
+
+.product_register_submit_button span {
+display: none;
+}
+
+@media (min-width: 600px) {
+.product_register_submit_button span {
+  display: initial;
+  }
+}
+
+.product_register_submit_button {
+  min-width: initial;
+  padding: 0.5rem;
+}

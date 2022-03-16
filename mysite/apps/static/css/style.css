@@ -72,3 +72,9 @@ body {
   min-width: initial;
   padding: 0.5rem;
 }
+
+/* product_create.html */
+#strLen {
+  color: #FF0000;
+  display: inline-block;
+}
