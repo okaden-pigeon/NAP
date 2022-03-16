@@ -19,10 +19,10 @@
     </div>
 {% endblock %}
 {% block content %}
-    <div class="image_slide">
+    <div id="image_slide">
         <img id="mypic" src="pics/1.jpg" width="400" height="400">
-        <input type="button" value="<" onclick="go_back()">
-        <input type="button" value=">" onclick="go_forward()">
+        <input class="slide_button" type="button" value="<" onclick="go_back()">
+        <input class="slide_button" type="button" value=">" onclick="go_forward()">
     </div>
 
     <script type="text/javascript" src="{% static 'js/product_image_slide.js' %}"></script>
