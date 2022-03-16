@@ -138,10 +138,10 @@ body {
   text-decoration: none;/*下線を表示させない*/
   }
 
-  #image_slide .slide_button_forward {
+  #image_slide .slide_button_forward{
     position: absolute;
     top: 50%;
-    right: 1%;
+    right: 50%;
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
@@ -152,3 +152,35 @@ body {
     color: white;
     text-decoration: none;
     }
+
+#product_info {
+  display: flex; /*横並び*/
+}
+#mypic {
+  width: 100%; /*画像サイズ指定*/
+  margin: 5%;
+  padding: 0;
+}
+#mypic img {
+  width: 50%;
+  height: auto;
+}
+#product_info .product_text {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+#product_info >p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+#product_info .text {
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+body {
+  margin: 20px;
+  padding: 0;
+}
