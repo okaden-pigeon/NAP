@@ -7,8 +7,8 @@
           menu
         </button>
         <ul class="nav__wrapper">
-          <li class="nav__item"><a href="/login">ログイン</a></li>
-          <li class="nav__item"><a href="/mail_resister">新規登録</a></li>
+          <li class="nav__item"><a href="{% url 'accounts:login' %}">ログイン</a></li>
+          <li class="nav__item"><a href="{% url 'accounts:create' %}">新規登録</a></li>
         </ul>
       </nav>
     </div>
