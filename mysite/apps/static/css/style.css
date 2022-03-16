@@ -122,10 +122,10 @@ body {
   position: relative;
 }
 
-.slide_button_back {
+#mypic {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 5%;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
