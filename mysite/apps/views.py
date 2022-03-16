@@ -1,14 +1,18 @@
 from re import template
 from django.shortcuts import render
-
+from django.contrib.auth.views import LoginView
+from  .forms import LoginForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views import generic
 
-class IndexView(generic.TemplateView):
+class IndexView(LoginRequiredMixin, generic.TemplateView):
     template_name = "index.html"
+    login_url = '/login/'
 
-class LoginView(generic.TemplateView):
+class LoginView(LoginView):
     template_name = "login.html"
+    form_class = LoginForm
 
 class MailRegisterView(generic.TemplateView):
     template_name = "mail_register.html"
