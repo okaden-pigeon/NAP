@@ -122,7 +122,7 @@ body {
   position: relative;
 }
 
-#product_info .slide_button_back {
+.slide_button_back {
   position: absolute;
   top: 50%;
   left: 1%;
@@ -138,7 +138,7 @@ body {
   text-decoration: none;/*下線を表示させない*/
   }
 
-#product_info .slide_button_forward{
+.slide_button_forward{
   position: absolute;
   top: 50%;
   right: 50%;
