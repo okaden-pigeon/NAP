@@ -19,7 +19,7 @@
     </div>
 {% endblock %}
 {% block content %}
-    <div id="image_slide">
+    <div id="product_info">
         <img id="mypic" src="pics/1.jpg" width="400" height="400">
         <input class="slide_button_back" type="button" value="<" onclick="go_back()">
         <input class="slide_button_forward" type="button" value=">" onclick="go_forward()">
@@ -31,27 +31,7 @@
         <img id="icon" src="" width="30" height="30"> <!-- アイコン --></p>
         <p>ニックネーム</p><p>○○学部</p>
   </div>
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+
     <script type="text/javascript" src="{% static 'js/product_image_slide.js' %}"></script>
 
 {% endblock %}

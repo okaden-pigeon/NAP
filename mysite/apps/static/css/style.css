@@ -157,3 +157,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+#product_info >p{
+  width: 49%;
+}
