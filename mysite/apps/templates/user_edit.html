@@ -1,5 +1,5 @@
 {% extends "header.html" %}
-
+{% load static %}
 {% block nav_bar %}
     <div class="site-header__middle">
       <nav class="nav">
@@ -19,6 +19,9 @@
 {% endblock %}
 
 {% block content %}
+  <p>アイコン</p>
+  <!--現在のアイコンを表示-->
+  <img id="image_icon" src="../images/default_user.png">
   <form method="post" enctype="multipart/form-data">
       <div id="dragDropArea">
           <div class="drag-drop-inside">
@@ -32,35 +35,28 @@
       <button class="register_button" type="submit" name="submit" value="登録">画像を登録</button>
   </form>
   <form method="post">
-      <p>商品名<br>
-      <input id="area1" type="text" name="product_name" maxlength="40" onkeyup="product_name_str_len();">
-      <div id="product_name_str_len">0/40文字</div></p>
-      <p>商品の状態<br>
-      <select name="condition" required>
-        <option value="">選択してください</option>
-        <option value="unused">新品、未使用</option>
-        <option value="almost_new">未使用に近い</option>
-        <option value="no_damage">目立った傷や汚れなし</option>
-        <option value="low_damage">やや傷や汚れあり</option>
-        <option value="middle_damage">傷や汚れあり</option>
-        <option value="high_damage">全体的に状態が悪い</option>
-      </select></p>
-      <p>カテゴリー<br>
-      <select name="category" required>
-        <option value="">選択してください</option>
-        <option value="unused">教科書、参考書</option>
-        <option value="almost_new">家具</option>
-        <option value="no_damage">家電</option>
-        <option value="low_damage">自転車</option>
-        <option value="middle_damage">生活雑貨</option>
-        <option value="high_damage">その他</option>
-      </select></p>
-      <p>商品の説明<br>
-      <textarea id="area2" name="comment" cols="30" rows="3" maxlength="500" onkeyup="product_explanation_str_len();"></textarea>
-      <div id="strLen">0/500文字</div></p>
-      <button class="product_register_submit_button" type="submit" name="submit" value="出品">出品する</button>
-
-  <script type="text/javascript" src="{% static 'js/product_image.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+      <p>ニックネーム<br>
+        <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="現在のニックネーム">
+        <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+        <div id="nickname_str_len">0/40文字</div></p>
+      <p>パスワード<br>
+        <input id="area4" type="text" name="password" minlength="8" maxlength="16">
+        <div id="password_str_len">8文字以上16文字以内で入力してください。</div></p>
+      <p>パスワード（確認）<br>
+        <input id="area5" type="text" name="password_confirmation" minlength="8" maxlength="16">
+        <!--一致しているか判断して表示-->
+        <div id="password_confirmation_str_len">一致していません。</div></p>
+      <p>学部<br>
+        <!-- ユーザーの大学の学部を表示-->
+        <select name="condition" required>
+          <option value="">現在の学部</option>
+          <option value="unused"></option>
+          <option value="almost_new">法学部</option>
+          <option value="no_damage">経済学部</option>
+          <option value="low_damage">経営学部</option>
+          <option value="middle_damage">理学部</option>
+          <option value="high_damage">工学部</option>
+        </select></p>
+      <button class="button" type="submit" name="save" value="保存">保存</button>
 
 {% endblock %}}

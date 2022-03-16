@@ -137,6 +137,7 @@ body {
   text-decoration: none;
   }
 
+<<<<<<< HEAD
 .slide_button_forward{
   position: absolute;
   top: 50%;
@@ -152,3 +153,26 @@ body {
   text-decoration: none;
   }
 */
+=======
+  #image_slide .slide_button_forward {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    font-size: 20px;
+    border: solid white 2px;
+    padding: 7px;
+    color: white;
+    text-decoration: none;
+    }
+
+#image_icon {
+    width: 100px;
+    height:100px;
+    border-radius:50%;
+    background-position: center;
+}
+>>>>>>> 46623ee5ed93587a3d8666a930cd703a28e91391
