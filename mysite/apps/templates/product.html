@@ -23,8 +23,15 @@
         <img id="mypic" src="pics/1.jpg" width="400" height="400">
         <input class="slide_button_back" type="button" value="<" onclick="go_back()">
         <input class="slide_button_forward" type="button" value=">" onclick="go_forward()">
-    </div>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <p class="product_name">商品名</p>
+        <p>カテゴリー ＞ ”カテゴリー名”</p>
+        <p>商品の状態 ＞ ”商品の状態”</p>
+        <p>”商品の説明”</p>
+        <p>出品者<br>
+        <img id="icon" src="" width="30" height="30"> <!-- アイコン --></p>
+        <p>ニックネーム</p><p>○○学部</p>
+  </div>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="..." class="d-block w-100" alt="...">
@@ -45,16 +52,6 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-  <div id="product_info">
-    <p class="product_name">商品名</p>
-    <p>カテゴリー ＞ ”カテゴリー名”</p>
-    <p>商品の状態 ＞ ”商品の状態”</p>
-    <p>”商品の説明”</p>
-    <p>出品者<br>
-    <img id="icon" src="" width="30" height="30"> <!-- アイコン --></p>
-    <p>ニックネーム</p><p>○○学部</p>
-  </div>
-
     <script type="text/javascript" src="{% static 'js/product_image_slide.js' %}"></script>
 
 {% endblock %}
