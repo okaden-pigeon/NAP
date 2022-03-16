@@ -158,7 +158,6 @@ ACCOUNT_EMAIL_REQUIRED = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # ローカルでの開発のためメールをコンソールで表示する
 
-LOGIN_URL = 'app:login'
 LOGIN_REDIRECT_URL = 'app:home'  # ログイン成功後の遷移先の指定
 ACCOUNT_LOGOUT_REDIRECT_URL = 'app:welcome'  # ログアウト成功後の遷移先の指定
 
