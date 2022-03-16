@@ -1,5 +1,6 @@
 from re import template
 from django.shortcuts import render
+from .models import Items
 
 
 from django.views import generic
@@ -7,8 +8,9 @@ from django.views import generic
 class IndexView(generic.TemplateView):
     template_name = "index.html"
     def get_context_data(self,**kwargs):
+        items = Items.objects.all()
         context = super().get_context_data(**kwargs)
-        context["name"] = ["#TODO","TODO2"]
+        context["item"] = items
         return context
 
 class LoginView(generic.TemplateView):

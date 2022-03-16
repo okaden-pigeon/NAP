@@ -31,10 +31,13 @@
     </form>
   </nav>
   <!-- ユーザーの大学の出品中の商品を新着順で表示-->
+  {% for i in item %}
   <div class="card" style="width: 18rem; margin: 50px;" href="/product">
     <img src="..." class="card-img-top" alt="商品画像">
     <div class="card-body">
-      <h5 class="card-title">商品名</h5>
+      <h5 class="card-title">{{i.item_name}}</h5>
+      <p>{{i.item_description}}</p>
     </div>
   </div>
+  {% endfor %}
 {% endblock %}
