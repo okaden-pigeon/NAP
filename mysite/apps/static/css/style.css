@@ -189,4 +189,5 @@ body {
 
 .flex_test-box {
   display: flex;              /* フレックスボックスにする */
+  justify-content: center;
 }
