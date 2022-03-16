@@ -35,6 +35,7 @@
   <form method="post">
       <p>ニックネーム<br>
         <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="現在のニックネーム">
+        <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
         <div id="nickname_str_len">0/40文字</div></p>
       <p>パスワード<br>
         <input id="area4" type="text" name="password" minlength="8" maxlength="16">
