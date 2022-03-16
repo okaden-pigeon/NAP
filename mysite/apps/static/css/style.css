@@ -160,7 +160,7 @@ body {
 
 /* mail_register.html */
 #process {
-  display: flex;
+  display: inline-block;
   text-align;
 }
 
