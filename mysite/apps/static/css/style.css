@@ -138,7 +138,7 @@ body {
   text-decoration: none;/*下線を表示させない*/
   }
 
-  #image_slide .slide_button_forward {
+  #image_slide .slide_button_forward{
     position: absolute;
     top: 50%;
     right: 1%;
