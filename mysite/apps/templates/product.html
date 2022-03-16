@@ -19,8 +19,9 @@
 {% endblock %}
 {% block content %}
     <div class="image_slide">
-      <img id=”image_file” src=””/>
-      <a href="◯◯"><i class="fa fa-twitter" ></i> Follow Me</a>
+        <img id="mypic" src="pics/1.jpg" width="400" height="300">
+        <input type="button" value="戻る" onclick="go_back()">
+        <input type="button" value="進む" onclick="go_forward()">
     </div>
 
     <script type="text/javascript" src="{% static 'js/product_image_slide.js' %}"></script>
