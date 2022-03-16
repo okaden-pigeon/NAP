@@ -165,7 +165,7 @@ body {
 
 .flex_test-item {
   padding: 10px;
-  color:  #fff;               /* 文字色 */
+  color:  #4D4D4D;               /* 文字色 */
   margin:  10px;              /* 外側の余白 */
   border-radius:  5px;        /* 角丸指定 */
 }
@@ -175,15 +175,15 @@ body {
 }
 
 .flex_test-item:nth-child(2) {
-  background-color:  #4CAF50; /* 背景色指定 */
+  background-color:  #E6E6E6; /* 背景色指定 */
 }
 
 .flex_test-item:nth-child(3) {
-  background-color: #3F51B5; /* 背景色指定 */
+  background-color: #E6E6E6; /* 背景色指定 */
 }
 
 .flex_test-item:nth-child(4) {
-  background-color:  #00BCD4; /* 背景色指定 */
+  background-color:  #E6E6E6; /* 背景色指定 */
 }
 
 .flex_test-box {
