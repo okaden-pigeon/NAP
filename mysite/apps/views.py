@@ -6,6 +6,10 @@ from django.views import generic
 
 class IndexView(generic.TemplateView):
     template_name = "index.html"
+    def get_context_data(self,**kwargs):
+        context = super().get_context_data(**kwargs)
+        context["name"] = ["#TODO","TODO2"]
+        return context
 
 class LoginView(generic.TemplateView):
     template_name = "login.html"
