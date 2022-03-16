@@ -118,69 +118,37 @@ body {
   font-size: 2.0rem;
 }
 
-#image_slide {
+#mypic{
   position: relative;
 }
-
-#image_slide .slide_button_back {
+/*
+.slide_button_back {
   position: absolute;
   top: 50%;
   left: 1%;
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  /*以下装飾*/
-  margin:0;/*余計な隙間を除く*/
-  font-size: 20px;/*文字サイズ*/
-  border: solid white 2px; /*線で囲う*/
-  padding: 7px;/*文字と線の間の余白*/
-  color: white;/*文字色*/
-  text-decoration: none;/*下線を表示させない*/
+  margin:0;
+  font-size: 20px;
+  border: solid white 2px;
+  padding: 7px;
+  color: white;
+  text-decoration: none;
   }
 
-  #image_slide .slide_button_forward{
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    -ms-transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    margin:0;
-    font-size: 20px;
-    border: solid white 2px;
-    padding: 7px;
-    color: white;
-    text-decoration: none;
-    }
-
-#product_info {
-  display: flex; /*横並び*/
-}
-#mypic {
-  width: 100%; /*画像サイズ指定*/
-  margin: 5%;
-  padding: 0;
-}
-#mypic img {
-  width: 50%;
-  height: auto;
-}
-#product_info .product_text {
-  margin: 0 0 0 20px;
-  padding: 0;
-}
-#product_info >p {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  font-size: 18px;
-}
-#product_info .text {
-  margin: 10px 0 0;
-  padding: 0;
-}
-
-body {
-  margin: 20px;
-  padding: 0;
-}
+.slide_button_forward{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  font-size: 20px;
+  border: solid white 2px;
+  padding: 7px;
+  color: white;
+  text-decoration: none;
+  }
+*/
