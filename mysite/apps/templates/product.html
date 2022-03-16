@@ -1,4 +1,5 @@
 {% extends "header.html" %}
+{% load static %}
 
 {% block nav_bar %}
     <div class="site-header__middle">
@@ -20,8 +21,8 @@
 {% block content %}
     <div class="image_slide">
         <img id="mypic" src="pics/1.jpg" width="400" height="400">
-        <input type="button" value="戻る" onclick="go_back()">
-        <input type="button" value="進む" onclick="go_forward()">
+        <input type="button" value="<" onclick="go_back()">
+        <input type="button" value=">" onclick="go_forward()">
     </div>
 
     <script type="text/javascript" src="{% static 'js/product_image_slide.js' %}"></script>
