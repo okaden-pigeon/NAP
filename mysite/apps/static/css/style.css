@@ -165,7 +165,8 @@ body {
 }
 
 #current_process {
+  height:60px;
   text-align:center;
-  padding:20px 0;
+  position:relative;
   background-color: #def7ff;
 }
