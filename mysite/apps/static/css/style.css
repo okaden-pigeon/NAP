@@ -157,3 +157,12 @@ body {
   text-decoration: none;
   }
 */
+
+/* mail_register.html */
+#process {
+  display: flex;
+}
+
+#current_process {
+  border: 1px solid;
+}
