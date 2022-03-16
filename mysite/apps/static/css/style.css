@@ -153,6 +153,7 @@ body {
     text-decoration: none;
     }
 
-  #icon {
-    
-  }
+#product_info {
+    display: flex;
+    justify-content: space-between;
+}
