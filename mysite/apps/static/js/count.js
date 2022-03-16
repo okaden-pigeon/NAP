@@ -12,13 +12,3 @@ function nickname_str_len(){
   var len = document.getElementById("area3").value.length;
   document.getElementById("nickname_str_len").innerText = len + "/20文字";
 }
-
-function password_str_len(){
-  var len = document.getElementById("area4").value.length;
-  document.getElementById("password_str_len").innerText = len + "文字";
-}
-
-function password_confirmation_str_len(){
-  var len = document.getElementById("area5").value.length;
-  document.getElementById("password_confirmation_str_len").innerText = len + "文字";
-}
