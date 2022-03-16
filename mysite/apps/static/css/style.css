@@ -161,6 +161,7 @@ body {
 /* mail_register.html */
 #process {
   display: flex;
+  text-align;
 }
 
 #current_process {
