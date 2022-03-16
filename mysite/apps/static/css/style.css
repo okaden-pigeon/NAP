@@ -157,12 +157,12 @@ body {
   display: flex; /*横並び*/
 }
 #mypic {
-  width: 640px; /*画像サイズ指定*/
-  margin: 0;
+  width: 100%; /*画像サイズ指定*/
+  margin: 5%;
   padding: 0;
 }
 #mypic img {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 #product_info .product_text {
