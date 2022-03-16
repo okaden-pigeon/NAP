@@ -1,5 +1,19 @@
 {% extends "header.html" %}
 
+{% block nav_bar %}
+    <div class="site-header__middle">
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          menu
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/login">ログイン</a></li>
+          <li class="nav__item"><a href="/mail_resister">新規登録</a></li>
+        </ul>
+      </nav>
+    </div>
+{% endblock %}
+
 {% block content %}
     <form action="" method="POST">
         {{ form.non_field_errors }}
