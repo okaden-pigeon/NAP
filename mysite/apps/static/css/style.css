@@ -156,20 +156,20 @@ body {
 #product_info {
   display: flex; /*横並び*/
 }
-#product_info .image {
+#mypic {
   width: 640px; /*画像サイズ指定*/
   margin: 0;
   padding: 0;
 }
-#product_info .image img {
+#mypic img {
   width: 100%;
   height: auto;
 }
-#product_info .right {
+#product_info .product_text {
   margin: 0 0 0 20px;
   padding: 0;
 }
-#product_info .title {
+#product_info >p {
   margin: 0;
   padding: 0;
   font-weight: bold;
