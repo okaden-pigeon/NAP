@@ -157,7 +157,7 @@ body {
   display: flex; /*横並び*/
 }
 #mypic {
-  width: 50px; /*画像サイズ指定*/
+  width: 500px; /*画像サイズ指定*/
   margin: 5%;
   padding: 0;
 }
