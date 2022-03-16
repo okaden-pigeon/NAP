@@ -38,10 +38,11 @@
         <div id="nickname_str_len">0/40文字</div></p>
       <p>パスワード<br>
         <input id="area4" type="text" name="password" minlength="8" maxlength="16">
-        <div id="password_str_len">0文字</div></p>
+        <div id="password_str_len">8文字以上16文字以内で入力してください。</div></p>
       <p>パスワード（確認）<br>
         <input id="area5" type="text" name="password_confirmation" minlength="8" maxlength="16">
-        <div id="password_confirmation_str_len">0文字</div></p>
+        <!--一致しているか判断して表示-->
+        <div id="password_confirmation_str_len">一致していません。</div></p>
       <p>学部<br>
         <!-- ユーザーの大学の学部を表示-->
         <select name="condition" required>
@@ -54,6 +55,5 @@
           <option value="high_damage">工学部</option>
         </select></p>
       <button class="button" type="submit" name="save" value="保存">保存</button>
-
 
 {% endblock %}}
