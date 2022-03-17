@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 
 # ログイン機能を必須にするには第一引数に(LoginRequiredMixin)を入れる
-class IndexView(LoginRequiredMixin, generic.TemplateView):
+class IndexView(generic.TemplateView):
     template_name = "index.html"
     def get_context_data(self,**kwargs):
         items = Items.objects.all()
