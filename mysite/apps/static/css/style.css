@@ -28,6 +28,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+main{
+  margin: 10% ;
+}
+
 .sr-only {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -122,22 +126,6 @@ body {
   position: relative;
 }
 /*
-.slide_button_back {
-  position: absolute;
-  top: 50%;
-  left: 1%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin:0;
-  font-size: 20px;
-  border: solid white 2px;
-  padding: 7px;
-  color: white;
-  text-decoration: none;
-  }
-
-<<<<<<< HEAD
 .slide_button_forward{
   position: absolute;
   top: 50%;
@@ -153,7 +141,6 @@ body {
   text-decoration: none;
   }
 */
-=======
   #image_slide .slide_button_forward {
     position: absolute;
     top: 50%;
@@ -175,4 +162,3 @@ body {
     border-radius:50%;
     background-position: center;
 }
->>>>>>> 46623ee5ed93587a3d8666a930cd703a28e91391
