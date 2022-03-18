@@ -42,18 +42,16 @@
             <option value="middle_damage">工学部</option>
         </select></p>
         <p>ニックネーム<br>
-        <input id="area1" type="text" name="product_name" maxlength="40" onkeyup="product_name_str_len();">
-        <div id="product_name_str_len">0/40文字</div></p>
-        <p>商品の状態<br>
-        <select name="condition" required>
-        <option value="">選択してください</option>
-        <option value="unused">新品、未使用</option>
-        <option value="almost_new">未使用に近い</option>
-        <option value="no_damage">目立った傷や汚れなし</option>
-        <option value="low_damage">やや傷や汚れあり</option>
-        <option value="middle_damage">傷や汚れあり</option>
-        <option value="high_damage">全体的に状態が悪い</option>
-        </select></p>
+            <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="現在のニックネーム">
+            <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+            <div id="nickname_str_len">0/40文字</div></p>
+        <p>パスワード<br>
+            <input id="area4" type="text" name="password" minlength="8" maxlength="16">
+            <div id="password_str_len">8文字以上16文字以内で入力してください。</div></p>
+        <p>パスワード（確認）<br>
+            <input id="area5" type="text" name="password_confirmation" minlength="8" maxlength="16">
+            <!--一致しているか判断して表示-->
+            <div id="password_confirmation_str_len">一致していません。</div></p>
         <p>カテゴリー<br>
         <select name="category" required>
         <option value="">選択してください</option>
