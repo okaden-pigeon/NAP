@@ -31,17 +31,19 @@
       </select>
     </form>
   </nav>
-  <!-- ユーザーの大学の出品中の商品を新着順で表示-->
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-  {% for i in item %}
-  <div class="col">
-    <div class="card h-100" href="/product">
-      <img src="..." class="card-img-top" alt="商品画像">
-      <div class="card-body">
-        <h5 class="card-title">{{i.item_name}}</h5>
-        <p>{{i.item_description}}</p>
+  <main>
+    <!-- ユーザーの大学の出品中の商品を新着順で表示-->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for i in item %}
+    <div class="col">
+      <div class="card h-100" href="/product">
+        <img src="..." class="card-img-top" alt="商品画像">
+        <div class="card-body">
+          <h5 class="card-title">{{i.item_name}}</h5>
+          <p>{{i.item_description}}</p>
+        </div>
       </div>
     </div>
-  </div>
-  {% endfor %}
+    {% endfor %}
+  </main>
 {% endblock %}
