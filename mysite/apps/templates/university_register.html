@@ -15,5 +15,13 @@
 {% endblock %}
 
 {% block content %}
-
+    <form method="post">
+        <p>苗字<br>
+            <input id="area4" type="text" name="password">
+            <div id="password_str_len">8文字以上16文字以内で入力してください。</div></p>
+        <p>名前<br>
+            <input id="area5" type="text" name="password_confirmation" minlength="8" maxlength="16">
+            <!--一致しているか判断して表示-->
+            <div id="password_confirmation_str_len">一致していません。</div></p>
+    </form>
 {% endblock %}

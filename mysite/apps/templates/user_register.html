@@ -1,5 +1,5 @@
 {% extends "header.html" %}
-
+{% load static %}
 {% block nav_bar %}
     <div class="site-header__middle">
       <nav class="nav">
@@ -52,8 +52,6 @@
             <input id="area5" type="text" name="password_confirmation" minlength="8" maxlength="16">
             <!--一致しているか判断して表示-->
             <div id="password_confirmation_str_len">一致していません。</div></p>
-
-    <script type="text/javascript" src="{% static 'js/product_image.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
-
+        <button class="button" type="submit" name="register" value="登録">登録</button>
+    </form>
 {% endblock %}
