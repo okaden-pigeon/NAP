@@ -26,8 +26,7 @@
       <h5 class="card-title">商品名</h5>
       <a href="/product_recreate" class="button" style="background-color: #2fa0f6;">編集</a>
       <!-- 削除したらデータを消してリダイレクト-->
-      <a href="/mylist" class="button" style="background-color: #de4d4d;">削除</a>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
         削除
       </button>
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -42,7 +41,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-            <button type="button" class="btn btn-primary">削除</button>
+            <button href="/mylist" type="button" class="btn btn-warning">削除</button>
           </div>
         </div>
       </div>
