@@ -7,7 +7,8 @@ class Users(models.Model):
   user_pass = models.CharField(max_length = 30)
   university = models.IntegerField()
   icon = models.ImageField(
-    upload_to='../images')
+    upload_to='./images'
+    )
   class Meta:
     db_table = "Users"
 
@@ -23,7 +24,9 @@ class Items(models.Model):
   item_name = models.CharField(max_length = 40)
   item_description = models.CharField(max_length=500)
   created_at = models.DateTimeField()
-  item_eval = models.IntegerField()
+  item_eval = models.IntegerField(
+    default = 0
+  )
   is_deal = models.BooleanField(
     default = False
   )
@@ -38,7 +41,7 @@ class Genres(models.Model):
 
 #Imagesテーブルの情報
 class Images(models.Model):
-  image = models.ImageField()
+  image = models.ImageField(upload_to='./images/')
   class Meta:
     db_table = "Images"
 
