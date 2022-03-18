@@ -20,6 +20,7 @@
   <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="何をお探しですか" aria-label="Search">
+      <!-- 検索機能-->
       <button class="btn" type="submit" style="color: #fff; background-color: #2fa0f6;">検索</button>
       <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;">
         <option selected>カテゴリー選択</option>
@@ -34,7 +35,7 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
   {% for i in item %}
   <div class="col">
-    <div class="card" href="/product">
+    <div class="card h-100" href="/product">
       <img src="..." class="card-img-top" alt="商品画像">
       <div class="card-body">
         <h5 class="card-title">{{i.item_name}}</h5>
