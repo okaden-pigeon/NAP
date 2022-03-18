@@ -15,5 +15,14 @@
 {% endblock %}
 
 {% block content %}
+    <form method="post">
+        <p>メールアドレス<br>
+            <input type="text" name="mail">
+        <p>メールアドレス（確認）<br>
+            <input type="text" name="mail_confirmation">
+            <!--一致しているか判断して表示-->
+            <div id="mail_confirmation">一致していません。</div></p>
+        <button class="button" type="submit" name="mail_register" value="メールアドレス認証">メールアドレス認証</button>
+    </form>
 
 {% endblock %}
