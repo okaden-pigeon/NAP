@@ -1,1 +1,62 @@
 {% extends "header.html" %}
+
+{% block nav_bar %}
+    <div class="site-header__middle">
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          menu
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="{% url 'accounts:login' %}">ログイン</a></li>
+          <li class="nav__item"><a href="{% url 'accounts:create' %}">新規登録</a></li>
+        </ul>
+      </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        <div id="dragDropArea">
+            <div class="drag-drop-inside">
+                <p class="drag-drop-buttons">
+                    <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="photo" onChange="photoPreview(event)">
+                </p>
+                <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
+                <div id="previewArea"></div>
+            </div>
+        </div>
+        <button class="register_button" type="submit" name="submit" value="登録">画像を登録</button>
+    </form>
+    <form method="post">
+        <p>商品名<br>
+        <input id="area1" type="text" name="product_name" maxlength="40" onkeyup="product_name_str_len();">
+        <div id="product_name_str_len">0/40文字</div></p>
+        <p>商品の状態<br>
+        <select name="condition" required>
+        <option value="">選択してください</option>
+        <option value="unused">新品、未使用</option>
+        <option value="almost_new">未使用に近い</option>
+        <option value="no_damage">目立った傷や汚れなし</option>
+        <option value="low_damage">やや傷や汚れあり</option>
+        <option value="middle_damage">傷や汚れあり</option>
+        <option value="high_damage">全体的に状態が悪い</option>
+        </select></p>
+        <p>カテゴリー<br>
+        <select name="category" required>
+        <option value="">選択してください</option>
+        <option value="unused">教科書、参考書</option>
+        <option value="almost_new">家具</option>
+        <option value="no_damage">家電</option>
+        <option value="low_damage">自転車</option>
+        <option value="middle_damage">生活雑貨</option>
+        <option value="high_damage">その他</option>
+        </select></p>
+        <p>商品の説明<br>
+        <textarea id="area2" name="comment" cols="30" rows="3" maxlength="500" onkeyup="product_explanation_str_len();"></textarea>
+        <div id="strLen">0/500文字</div></p>
+        <button class="product_register_submit_button" type="submit" name="submit" value="出品">出品する</button>
+
+    <script type="text/javascript" src="{% static 'js/product_image.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+
+{% endblock %}
