@@ -16,11 +16,15 @@
 
 {% block content %}
     <form method="post">
-        <div id="name">
-            <p>姓<br>
-                <input type="text" name="last_name">
-            <p>名<br>
-                <input type="text" name="first_name">
+        <div class="row">
+        <div class="col">
+            <p>姓</p>
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+        </div>
+        <div class="col">
+            <p>名</p>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+        </div>
         </div>
         <div id="name_attention">下で登録する画像に表記の名前を入力してください。</div></p>
     </form>
