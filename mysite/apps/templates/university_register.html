@@ -7,8 +7,8 @@
           menu
         </button>
         <ul class="nav__wrapper">
-          <li class="nav__item"><a href="{% url 'accounts:login' %}">ログイン</a></li>
-          <li class="nav__item"><a href="{% url 'accounts:create' %}">新規登録</a></li>
+          <li class="nav__item"><a href="/login.html">ログイン</a></li>
+          <li class="nav__item"><a href="/mail_register.html">新規登録</a></li>
         </ul>
       </nav>
     </div>
@@ -39,7 +39,7 @@
                 <div id="previewArea"></div>
             </div>
         </div>
-        <button class="register_button" type="submit" name="submit" value="登録">画像を登録</button>
+        <button href="/user_register" class="button" type="submit" name="university_register" value="大学認証">大学認証</button>
     </form>
-    <button href="/user_register" class="button" type="submit" name="university_register" value="大学認証">大学認証</button>
+
 {% endblock %}
