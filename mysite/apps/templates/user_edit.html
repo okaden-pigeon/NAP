@@ -45,7 +45,12 @@
       <p>パスワード（確認）<br>
         <input id="area5" type="text" name="password_confirmation" minlength="8" maxlength="16">
         <!--一致しているか判断して表示-->
-        <div id="password_confirmation">一致していません。</div></p>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+                一致していません
+            </div>
+        </div>
       <p>学部<br>
         <!-- ユーザーの大学の学部を表示-->
         <select name="condition" required>
