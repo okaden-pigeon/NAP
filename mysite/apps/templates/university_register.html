@@ -16,12 +16,25 @@
 
 {% block content %}
     <form method="post">
-        <p>苗字<br>
-            <input id="area4" type="text" name="password">
-            <div id="password_str_len">8文字以上16文字以内で入力してください。</div></p>
-        <p>名前<br>
-            <input id="area5" type="text" name="password_confirmation" minlength="8" maxlength="16">
-            <!--一致しているか判断して表示-->
-            <div id="password_confirmation_str_len">一致していません。</div></p>
+        <div id="name">
+            <p>姓<br>
+                <input type="text" name="last_name">
+            <p>名<br>
+                <input type="text" name="first_name">
+        </div>
+        <div id="name_attention">下で登録する画像に表記の名前を入力してください。</div></p>
+    </form>
+    <form method="post" enctype="multipart/form-data">
+        <p>学生証もしくは合格証明書をアップロードしてください。<br>
+        <div id="dragDropArea">
+            <div class="drag-drop-inside">
+                <p class="drag-drop-buttons">
+                    <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="photo" onChange="photoPreview(event)">
+                </p>
+                <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
+                <div id="previewArea"></div>
+            </div>
+        </div>
+        <button class="register_button" type="submit" name="submit" value="登録">画像を登録</button>
     </form>
 {% endblock %}
