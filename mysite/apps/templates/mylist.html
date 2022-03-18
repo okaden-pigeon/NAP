@@ -1,5 +1,5 @@
 {% extends "header.html" %}
-
+{% load static %}
 {% block nav_bar %}
     <div class="site-header__middle">
       <nav class="nav">
@@ -29,6 +29,7 @@
       <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
         削除
       </button>
+      <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
