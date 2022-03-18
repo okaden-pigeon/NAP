@@ -24,9 +24,9 @@
     <img src="..." class="card-img-top" alt="商品画像">
     <div class="card-body">
       <h5 class="card-title">商品名</h5>
-      <a href="/product_recreate" class="button" style="background-color: #2fa0f6;">編集</a>
+      <a href="/product_recreate" class="button">編集</a>
       <!-- 削除したらデータを消してリダイレクト-->
-      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
         削除
       </button>
       <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
@@ -42,7 +42,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-            <button href="/mylist" type="button" class="btn btn-warning">削除</button>
+            <button href="/mylist" type="button" class="btn btn-danger">削除</button>
           </div>
         </div>
       </div>
