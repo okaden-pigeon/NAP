@@ -1,5 +1,5 @@
 {% extends "header.html" %}
-{% load static %}
+
 {% block nav_bar %}
     <div class="site-header__middle">
       <nav class="nav">
@@ -26,33 +26,7 @@
       <h5 class="card-title">商品名</h5>
       <a href="/product_recreate" class="button">編集</a>
       <!-- 削除したらデータを消してリダイレクト-->
-      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        削除
-      </button>
-      <script>
-        var myModal = document.getElementById('myModal')
-        var myInput = document.getElementById('myInput')
-
-        myModal.addEventListener('shown.bs.modal', function () {
-          myInput.focus()
-        })
-      </script>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">確認</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            本当に削除してもいいですか？
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-            <button href="/mylist" type="button" class="btn btn-danger">削除</button>
-          </div>
-        </div>
-      </div>
+      <a href="/mylist" class="button" style="background-color: red;">削除</a>
     </div>
     </div>
       <p class="card-text" style="margin-top: 10%;">最終更新日時：〇〇月〇〇日〇〇時〇〇分</p>
