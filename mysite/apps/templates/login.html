@@ -1,1 +1,31 @@
 {% extends "header.html" %}
+
+{% block nav_bar %}
+    <div class="site-header__middle">
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          menu
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/login.html">ログイン</a></li>
+          <li class="nav__item"><a href="/mail_register.html">新規登録</a></li>
+        </ul>
+      </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <main>
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">メールアドレス</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">パスワード</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <button type="submit" class="btn btn-primary">ログイン</button>
+    </form>
+  </main>
+{% endblock %}

@@ -1,5 +1,5 @@
 {% extends "header.html" %}
-
+{% load static %}
 {% block nav_bar %}
     <div class="site-header__middle">
       <nav class="nav">
@@ -17,3 +17,56 @@
       <a class="button" href="/product_create">出品</a>
     </div>
 {% endblock %}
+
+{% block content %}
+<main>
+  <p>アイコン</p>
+  <!--現在のアイコンを表示-->
+  <img id="image_icon" src="../images/default_user.png">
+  <form method="post" enctype="multipart/form-data">
+      <div id="dragDropArea">
+          <div class="drag-drop-inside">
+              <p class="drag-drop-buttons">
+                  <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="photo" onChange="photoPreview(event)">
+              </p>
+              <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
+              <div id="previewArea"></div>
+          </div>
+      </div>
+      <button class="register_button" type="submit" name="submit" value="登録">画像を登録</button>
+  </form>
+  <form method="post">
+      <p>ニックネーム<br>
+        <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="現在のニックネーム">
+        <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+        <div id="nickname_str_len">0/40文字</div></p>
+      <label for="inputPassword5" class="form-label">パスワード</label>
+      <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+
+      <div id="passwordHelpBlock" class="form-text">
+          8文字以上16文字以内で入力してください。
+      </div>
+      <label for="inputPassword5" class="form-label">パスワード（確認）</label>
+      <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+      <!--一致しているか判断して表示-->
+      <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
+          <div>
+              一致していません
+          </div>
+      </div>
+      <p>学部<br>
+        <!-- ユーザーの大学の学部を表示-->
+        <select name="condition" required>
+          <option value="">現在の学部</option>
+          <option value="unused"></option>
+          <option value="almost_new">法学部</option>
+          <option value="no_damage">経済学部</option>
+          <option value="low_damage">経営学部</option>
+          <option value="middle_damage">理学部</option>
+          <option value="high_damage">工学部</option>
+        </select></p>
+      <button class="button" type="submit" name="save" value="保存">保存</button>
+  </form>
+</main>
+{% endblock %}}

@@ -20,21 +20,30 @@
   <nav class="navbar navbar-light bg-light">
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="何をお探しですか" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
-      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+      <!-- 検索機能-->
+      <button class="btn" type="submit" style="color: #fff; background-color: #2fa0f6;">検索</button>
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;">
         <option selected>カテゴリー選択</option>
-        <!-- 分類の数分表示-->
+        <!-- 分類の表示-->
         <option value="1">教科書</option>
         <option value="2">冷蔵庫</option>
         <option value="3">・・・・・・</option>
       </select>
     </form>
   </nav>
-  <!-- ユーザーの大学の出品中の商品を新着順で表示-->
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 href="/product" class="card-title">商品名</h5>
+  <main>
+    <!-- ユーザーの大学の出品中の商品を新着順で表示-->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for i in item %}
+    <div class="col">
+      <div class="card h-100" href="/product">
+        <img src="..." class="card-img-top" alt="商品画像">
+        <div class="card-body">
+          <h5 class="card-title">{{i.item_name}}</h5>
+          <p>{{i.item_description}}</p>
+        </div>
+      </div>
     </div>
-  </div>
+    {% endfor %}
+  </main>
 {% endblock %}

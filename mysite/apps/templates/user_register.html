@@ -1,1 +1,94 @@
 {% extends "header.html" %}
+{% load static %}
+{% block nav_bar %}
+    <div class="site-header__middle">
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          menu
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/login.html">ログイン</a></li>
+          <li class="nav__item"><a href="/mail_register.html">新規登録</a></li>
+        </ul>
+      </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="Group">
+      <div class="Group-Bar"></div>
+        <div class="Group-Item">
+          <div class="Group-Item-CircleOuter Circle Shapeborder">
+          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+        </div>
+        <p class="Group-Item-Text">メールアドレス認証</p>
+      </div>
+        <div class="Group-Item">
+          <div class="Group-Item-CircleOuter Circle Shapeborder">
+          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+        </div>
+        <p class="Group-Item-Text">大学認証</p>
+      </div>
+        <div class="Group-Item isActive">
+          <div class="Group-Item-CircleOuter Circle Shapeborder isActive">
+          <div class="Group-Item-CircleInner Circle Shapeborder isActive"></div>
+        </div>
+        <p class="Group-Item-Text">ユーザー登録</p>
+      </div>
+      <div class="Group-Item">
+        <div class="Group-Item-CircleOuter Circle Shapeborder">
+          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+          </div>
+        <p class="Group-Item-Text">完了</p>
+      </div>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <p>アイコン<br>
+        <div id="dragDropArea">
+            <div class="drag-drop-inside">
+                <p class="drag-drop-buttons">
+                    <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="photo" onChange="photoPreview(event)">
+                </p>
+                <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
+                <div id="previewArea"></div>
+            </div>
+        </div>
+        <button class="register_button" type="submit" name="submit" value="登録">画像を登録</button>
+    </form>
+    <form method="post">
+        <!--認証した大学名を表示-->
+        <p>〇〇大学<br>
+        <p>学部<br>
+        <!--認証した大学の学部を選択-->
+        <select name="condition" required>
+            <option value="">選択してください</option>
+            <option value="unused">法学部</option>
+            <option value="almost_new">経済学部</option>
+            <option value="no_damage">経営学部</option>
+            <option value="low_damage">理学部</option>
+            <option value="middle_damage">工学部</option>
+        </select></p>
+        <p>ニックネーム<br>
+            <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="ニックネーム">
+            <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+            <div id="nickname_str_len">0/40文字</div></p>
+        <label for="inputPassword5" class="form-label">パスワード</label>
+        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+
+        <div id="passwordHelpBlock" class="form-text">
+            8文字以上16文字以内で入力してください。
+        </div>
+        <label for="inputPassword5" class="form-label">パスワード（確認）</label>
+        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+        <!--一致しているか判断して表示-->
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
+            <div>
+                一致していません
+            </div>
+        </div>
+        <button  href="/" class="button" type="submit" name="register" value="登録">登録</button>
+    </form>
+  </main>
+{% endblock %}

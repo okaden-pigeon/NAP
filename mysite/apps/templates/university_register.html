@@ -1,0 +1,74 @@
+{% extends "header.html" %}
+
+{% block nav_bar %}
+    <div class="site-header__middle">
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          menu
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/login.html">ログイン</a></li>
+          <li class="nav__item"><a href="/mail_register.html">新規登録</a></li>
+        </ul>
+      </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="Group">
+      <div class="Group-Bar"></div>
+        <div class="Group-Item">
+          <div class="Group-Item-CircleOuter Circle Shapeborder">
+          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+        </div>
+        <p class="Group-Item-Text">メールアドレス認証</p>
+      </div>
+        <div class="Group-Item isActive">
+          <div class="Group-Item-CircleOuter Circle Shapeborder isActive">
+          <div class="Group-Item-CircleInner Circle Shapeborder isActive"></div>
+        </div>
+        <p class="Group-Item-Text">大学認証</p>
+      </div>
+        <div class="Group-Item">
+          <div class="Group-Item-CircleOuter Circle Shapeborder">
+          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+        </div>
+        <p class="Group-Item-Text">ユーザー登録</p>
+      </div>
+      <div class="Group-Item">
+        <div class="Group-Item-CircleOuter Circle Shapeborder">
+          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+          </div>
+        <p class="Group-Item-Text">完了</p>
+      </div>
+    </div>
+    <form method="post">
+        <div class="row">
+        <div class="col">
+            <p>姓</p>
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+        </div>
+        <div class="col">
+            <p>名</p>
+            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+        </div>
+        </div>
+        <div id="name_attention">下で登録する画像に表記の名前を入力してください。</div></p>
+    </form>
+    <form method="post" enctype="multipart/form-data">
+        <p>学生証もしくは合格証明書をアップロードしてください。<br>
+        <div id="dragDropArea">
+            <div class="drag-drop-inside">
+                <p class="drag-drop-buttons">
+                    <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="photo" onChange="photoPreview(event)">
+                </p>
+                <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
+                <div id="previewArea"></div>
+            </div>
+        </div>
+        <button class="register_button" type="submit" name="submit" value="登録">画像登録</button>
+    </form>
+    <button href="/user_register" class="button" type="submit" name="university_register" value="大学認証">大学認証</button>
+  </main>
+{% endblock %}

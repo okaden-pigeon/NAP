@@ -6,7 +6,7 @@ import pyocr
 import pyocr.builders
 
 # TODO　ファイルのパスを受け取れるようにする
-def certification():
+def certification(file,first,last):
     tools = pyocr.get_available_tools()
     if len(tools) == 0:
         print("No OCR tool found")
@@ -19,13 +19,15 @@ def certification():
     lang = "jpn"
 
     txt = tool.image_to_string(
-        Image.open('../images/test4.webp'),
+        # imageを受け取る
+        Image.open(file),
         lang=lang,
         builder=pyocr.builders.TextBuilder())
+    print(txt)
 
-    name = "#TODO"
-    if name in txt:
+    if first in txt and last in txt:
+        print(1)
         return True
     else:
+        print(2)
         return False
-
