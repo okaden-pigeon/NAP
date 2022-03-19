@@ -16,7 +16,5 @@ urlpatterns = [
     path('user_edit/', views.UserEditView.as_view(), name="user_edit"),
     path('user_register/', views.UserRegisterView.as_view(), name="user_register"),
     # メールアドレス認証 https://blog.narito.ninja/detail/42/#_4
-    path('user_create/', views.UserCreate.as_view(), name='user_create'),
-    path('user_create/done', views.UserCreateDone.as_view(), name='user_create_done'),
     path('user_create/complete/<token>/', views.UserCreateComplete.as_view(), name='user_create_complete'),
 ]
