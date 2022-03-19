@@ -5,6 +5,7 @@
     padding: 10px;
     border: #ddd dashed 5px;
     min-height: 200px;
+    width: 40%;
   }
 
 #dragDropArea p{
