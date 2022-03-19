@@ -25,7 +25,7 @@
     </form>
     <form class="form-inline" method="post">
       <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;">
-        <option selected>カテゴリー選択</option>
+        <option selected disabled>カテゴリー選択</option>
         <!-- 分類の表示-->
         {% for i in genre %}
         <option value="{{i.genre_name}}">{{i.genre_name}}</option>
