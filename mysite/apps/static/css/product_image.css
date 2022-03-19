@@ -6,6 +6,7 @@
     border: #ddd dashed 5px;
     min-height: 200px;
     width: 40%;
+    height:150%;
     float: left;
     text-align: center;
   }
