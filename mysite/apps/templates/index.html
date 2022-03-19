@@ -35,6 +35,7 @@
   </nav>
   <main>
     <!-- ユーザーの大学の出品中の商品を新着順で表示-->
+    {% if item %}
     <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for i in item %}
     <div class="col">
@@ -47,8 +48,11 @@
       </div>
     </div>
     {% endfor %}
-
-    <!-- 検索結果表示-->
+    {% else %}
+    <div class="ui segment warning message">
+      <p>検索結果はありません。</p>
+    </div>
+    {% endif %}
 
   </main>
 {% endblock %}
