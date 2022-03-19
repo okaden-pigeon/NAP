@@ -12,9 +12,9 @@ from django.views import generic
 class IndexView(generic.TemplateView):
     template_name = "index.html"
     def get_context_data(self,**kwargs):
-        items = Items.objects.all()
         context = super().get_context_data(**kwargs)
-        context["item"] = items
+        context["item"] = Items.objects.all()
+        context["genre"] = Genres.objects.all()
         return context
 
 class LoginView(LoginView):
