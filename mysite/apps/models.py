@@ -9,7 +9,8 @@ class Users(models.Model):
   user_pass = models.CharField(max_length = 30)
   university = models.IntegerField()
   icon = models.ImageField(
-    upload_to='./images'
+    upload_to='./images',
+    default = "./images/default_user.png"
     )
   def __str__(self):
         return self.user_name
@@ -38,6 +39,10 @@ class Items(models.Model):
   is_deal = models.BooleanField(
     default = False
   )
+  icon = models.ImageField(
+    upload_to='./images',
+    default = "./images/default_user.png"
+    )
   def __str__(self):
         return self.item_name
   class Meta:
