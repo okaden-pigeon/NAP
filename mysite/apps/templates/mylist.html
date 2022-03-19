@@ -22,6 +22,7 @@
   <main>
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <!-- ユーザーの出品している商品を更新順で表示-->
+    {% for i in myitem %}
     <div class="card">
       <img src="..." class="card-img-top" alt="商品画像">
       <div class="card-body">
@@ -33,5 +34,6 @@
         <p class="card-text" style="margin-top: 10%;">最終更新日時：〇〇月〇〇日〇〇時〇〇分</p>
       </div>
     </div>
+    {% endfor %}
   </main>
 {% endblock %}
