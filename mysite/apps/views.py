@@ -19,7 +19,7 @@ class IndexView(generic.TemplateView):
     def get_context_data(self,**kwargs):
         items = Genres.objects.all()
         context = super().get_context_data(**kwargs)
-        context["item"] = items
+        context["ge"] = items
         return context
 
 class LoginView(LoginView):
