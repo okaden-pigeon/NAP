@@ -6,6 +6,7 @@
     border: #ddd dashed 5px;
     min-height: 200px;
     width: 40%;
+    display: flex;
   }
 
 #drag-drop-inside{
