@@ -1,6 +1,11 @@
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.staticfiles.urls import static 
+import sys
+sys.path.append("../")
 
 from . import views
+import mysite.settings
 
 app_name = 'apps'
 urlpatterns = [
@@ -16,3 +21,6 @@ urlpatterns = [
     path('user_edit/', views.UserEditView.as_view(), name="user_edit"),
     path('user_register/', views.UserRegisterView.as_view(), name="user_register"),
     ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(mysite.settings.MEDIA_URL,document_root=mysite.settings.MEDIA_ROOT)

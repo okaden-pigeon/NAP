@@ -40,7 +40,7 @@ class Items(models.Model):
     default = False
   )
   icon = models.ImageField(
-    upload_to='./images',
+    upload_to='./static/apps/',
     default = "./images/default_user.png"
     )
   def __str__(self):
