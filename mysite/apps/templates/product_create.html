@@ -20,7 +20,6 @@
 {% block content %}
 <main>
   <form method="post" enctype="multipart/form-data">
-        <div class="item_info">
       <div id="dragDropArea">
           <div class="drag-drop-inside">
               <p class="drag-drop-buttons">
@@ -33,6 +32,7 @@
       <button class="register_button" type="submit" name="submit" value="登録">画像を登録</button>
   </form>
   <form method="post">
+  <div class="item_info">
       <p class="item_name">商品名<br>
       <input id="area1" type="text" name="product_name" maxlength="40" onkeyup="product_name_str_len();">
       <div id="product_name_str_len">0/40文字</div></p>
