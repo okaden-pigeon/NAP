@@ -1,20 +1,7 @@
 {% extends "header.html" %}
 
-{% block nav_bar %}
-    <div class="site-header__middle">
-      <nav class="nav">
-        <button class="nav__toggle" aria-expanded="false" type="button">
-          menu
-        </button>
-        <ul class="nav__wrapper">
-          <li class="nav__item"><a href="/login.html">ログイン</a></li>
-          <li class="nav__item"><a href="/mail_register.html">新規登録</a></li>
-        </ul>
-      </nav>
-    </div>
-{% endblock %}
-
 {% block content %}
+<<<<<<< HEAD
     <main>
       <div class="Group">
         <div class="Group-Bar"></div>
@@ -53,5 +40,21 @@
           <button href="/university_register.html" class="button" type="submit" name="mail_register" value="メールアドレス認証">メールアドレス認証</button>
       </form>
     </main>
+=======
+<div class="flex_test-box">
+    <div class="flex_test-item">
+        ①メールアドレス認証
+    </div>
+    <div class="flex_test-item">
+        ②大学認証
+    </div>
+    <div class="flex_test-item">
+        ③ユーザー登録
+    </div>
+    <div class="flex_test-item">
+        登録完了
+    </div>
+</div>
+>>>>>>> 77a433d2fdb6ba39ab6f4a173f2a3e4799b0f8ef
 
 {% endblock %}

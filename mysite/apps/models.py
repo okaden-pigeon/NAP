@@ -52,7 +52,7 @@ class Genres(models.Model):
   class Meta:
     db_table = "Genres"
 
-#Imagesテーブルの情報
+# Imagesテーブルの情報
 class Images(models.Model):
   id = models.AutoField(primary_key=True)
   image = models.ImageField(upload_to='./images/')
