@@ -22,16 +22,18 @@
   <main>
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <!-- ユーザーの出品している商品を更新順で表示-->
+    {% for i in # %} <!-- ユーザーの出品している商品を引っ張り出す方法がわからなかったです、、、-->
     <div class="card">
       <img src="..." class="card-img-top" alt="商品画像">
       <div class="card-body">
-        <h5 class="card-title">商品名</h5>
+        <h5 class="card-title">{{i.item_name}}</h5>
         <a href="/product_recreate" class="button">編集</a>
         <!-- 削除したらデータを消してリダイレクト-->
         <a href="/mylist" class="button" style="background-color: red;">削除</a>
         <!--bootsrapのmodalでconfirmationを出してもいいかもね -->
-        <p class="card-text" style="margin-top: 10%;">最終更新日時：〇〇月〇〇日〇〇時〇〇分</p>
+        <p class="card-text" style="margin-top: 10%;">最終更新日時：{{i.item_name}}</p>
       </div>
     </div>
+    {% endfor %}
   </main>
 {% endblock %}
