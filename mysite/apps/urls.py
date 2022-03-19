@@ -15,6 +15,4 @@ urlpatterns = [
     path('university_register/', views.UniversityRegisterView.as_view(), name="university_register"),
     path('user_edit/', views.UserEditView.as_view(), name="user_edit"),
     path('user_register/', views.UserRegisterView.as_view(), name="user_register"),
-    # メールアドレス認証 https://blog.narito.ninja/detail/42/#_4
-    path('user_create/complete/<token>/', views.UserCreateComplete.as_view(), name='user_create_complete'),
-]
+    ]
