@@ -36,6 +36,11 @@ class MylistView(generic.TemplateView):
 
 class ProductCreateView(generic.TemplateView):
     template_name = "product_create.html"
+    def get_context_data(self,**kwargs):
+        genres = Genres.objects.all()
+        context = super().get_context_data(**kwargs)
+        context["genre"] = genres
+        return context
 
 class ProductRecreateView(generic.TemplateView):
     template_name = "product_recreate.html"
