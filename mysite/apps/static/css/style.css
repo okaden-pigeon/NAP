@@ -79,7 +79,7 @@ main{
 
 /* product_create.html */
 #strLen {
-  color: #FF0000;
+  color: #000000;
   display: inline-block;
 }
 
@@ -167,3 +167,4 @@ main{
     border-radius:50%;
     background-position: center;
 }
+
