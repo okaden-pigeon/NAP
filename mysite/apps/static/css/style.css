@@ -170,32 +170,47 @@ main{
 
 /* mail_register.html */
 .flex_process {
-  background-color: #eee;     /* 背景色指定 */
   padding:  10px;             /* 余白指定 */
   display: flex;              /* フレックスボックスにする */
   justify-content:center;
 }
 
-.flex_process {
+.box_mail:nth-child(1) {
+  background-color:  #2196F3; /* 背景色指定 */
   padding: 10px;
   color:  #FFFFFF;               /* 文字色 */
   margin:  10px;              /* 外側の余白 */
   border-radius:  5px;        /* 角丸指定 */
   width: 15%;                 /* 幅指定 */
-}
-
-.box_mail:nth-child(1) {
-  background-color:  #2196F3; /* 背景色指定 */
+  text-align: center;
 }
 
 .box_univ:nth-child(2) {
   background-color:  #4CAF50; /* 背景色指定 */
+  padding: 10px;
+  color:  #FFFFFF;               /* 文字色 */
+  margin:  10px;              /* 外側の余白 */
+  border-radius:  5px;        /* 角丸指定 */
+  width: 15%;                 /* 幅指定 */
+  text-align: center;
 }
 
 .box_user:nth-child(3) {
   background-color: #3F51B5; /* 背景色指定 */
+  padding: 10px;
+  color:  #FFFFFF;               /* 文字色 */
+  margin:  10px;              /* 外側の余白 */
+  border-radius:  5px;        /* 角丸指定 */
+  width: 15%;                 /* 幅指定 */
+  text-align: center;
 }
 
 .box_register:nth-child(4) {
   background-color:  #00BCD4; /* 背景色指定 */
+  padding: 10px;
+  color:  #FFFFFF;               /* 文字色 */
+  margin:  10px;              /* 外側の余白 */
+  border-radius:  5px;        /* 角丸指定 */
+  width: 15%;                 /* 幅指定 */
+  text-align: center;
 }
