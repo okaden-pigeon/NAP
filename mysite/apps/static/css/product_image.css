@@ -1,11 +1,11 @@
 /* product_create.html 写真をドラッグ　*/
 #dragDropArea {
-    background-color: #000000;
+    background-color: #f4f4f4;
     margin: 10px;
     padding: 10px;
     border: #ddd dashed 5px;
     min-height: 200px;
-    width: 50%;
+    width: 40%;
   }
 
 #drag-drop-inside{
