@@ -1,12 +1,21 @@
 /* product_create.html 写真をドラッグ　*/
-#dragDropArea{
+#dragDropArea {
     background-color: #f4f4f4;
     margin: 10px;
     padding: 10px;
     border: #ddd dashed 5px;
     min-height: 200px;
+    width: 35vw;
+    height: 35vw;
+    float: left;
     text-align: center;
   }
+
+#drag-drop-inside{
+  width : 100%;
+  padding-top : 100% ;
+  background-color: #29d632;
+}
 
 #dragDropArea p{
   　  color: #4169e1;
@@ -15,14 +24,22 @@
   }
 
 #dragDropArea .drag-drop-buttons{
-      margin-top: 20px;
-      font-size: 12px;
-      font-size: 1.2em;
+      margin-top: 10vw;
+      font-size: 1vw;
   }
 
 .drag-drop-buttons input{
-      margin: auto;
+   margin: auto;
   }
+
+.drag-drop-info {
+  font-size: 1vw;
+  color: #0067c0;
+}
+
+.file_input {
+  width: 1vw;
+}
 
 .register_button {
     -webkit-appearance: none;
@@ -61,9 +78,7 @@
 
 /* 出品するボタン */
 .product_register_submit_button {
-    margin-top: 20px;
-    font-size: 12px;
-    font-size: 1.2em;
+    font-size: 1.5vw;
 }
 
 .product_register_submit_button input {
@@ -76,7 +91,7 @@
           appearance: none;
   color: #fff;
   background-color: #2fa0f6;
-  min-width: 120px;
+  width: 35vw;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-align: center;
