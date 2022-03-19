@@ -80,14 +80,7 @@
             8文字以上16文字以内で入力してください。
         </div>
         <label for="inputPassword5" class="form-label">パスワード（確認）</label>
-        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-        <!--一致しているか判断して表示-->
-        <div class="alert alert-danger d-flex align-items-center" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-            <div>
-                一致していません
-            </div>
-        </div>
+        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" oninput="CheckPassword(this)" required>
         <button  href="/" class="button" type="submit" name="register" value="登録">登録</button>
     </form>
   </main>
