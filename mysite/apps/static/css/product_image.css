@@ -78,7 +78,7 @@
 
 /* 出品するボタン */
 .product_register_submit_button {
-    font-size: 1vw;
+    font-size: 1.5vw;
 }
 
 .product_register_submit_button input {
@@ -91,7 +91,7 @@
           appearance: none;
   color: #fff;
   background-color: #2fa0f6;
-  min-width: 120px;
+  width: 35vw;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-align: center;
