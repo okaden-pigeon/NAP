@@ -1,5 +1,5 @@
-var fileArea = document.getElementById('dragDropArea');
-var fileInput = document.getElementById('fileInput');
+var fileArea = document.getElementById('drag_drop_area');
+var fileInput = document.getElementById('file_input');
 fileArea.addEventListener('dragover', function(evt){
   evt.preventDefault();
   fileArea.classList.add('dragover');
