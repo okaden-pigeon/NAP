@@ -1,13 +1,22 @@
 from re import template
 from django.shortcuts import render
+from .models import Items
 
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views import generic
 
+# ログイン機能を必須にするには第一引数に(LoginRequiredMixin)を入れる
 class IndexView(generic.TemplateView):
     template_name = "index.html"
+    def get_context_data(self,**kwargs):
+        items = Items.objects.all()
+        context = super().get_context_data(**kwargs)
+        context["item"] = items
+        return context
 
-class LoginView(generic.TemplateView):
+class LoginView(LoginView):
     template_name = "login.html"
 
 class MailRegisterView(generic.TemplateView):

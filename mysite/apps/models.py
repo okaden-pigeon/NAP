@@ -1,7 +1,9 @@
 from django.db import models
 
+
 # Usersテーブルの情報
 class Users(models.Model):
+  id = models.AutoField(primary_key=True)
   user_name = models.CharField(max_length=20)
   user_email = models.EmailField()
   user_pass = models.CharField(max_length = 30)
@@ -9,18 +11,24 @@ class Users(models.Model):
   icon = models.ImageField(
     upload_to='./images'
     )
+  def __str__(self):
+        return self.user_name
   class Meta:
     db_table = "Users"
 
 # Universitiesテーブルの情報
 class Universities(models.Model):
+  id = models.AutoField(primary_key=True)
   university_name = models.CharField(max_length=30)
   university_domain = models.URLField()
+  def __str__(self):
+        return self.university_name
   class Meta:
     db_table = "Universities"
 
 # Itemsテーブルの情報
 class Items(models.Model):
+  id = models.AutoField(primary_key=True)
   item_name = models.CharField(max_length = 40)
   item_description = models.CharField(max_length=500)
   created_at = models.DateTimeField()
@@ -30,18 +38,26 @@ class Items(models.Model):
   is_deal = models.BooleanField(
     default = False
   )
+  def __str__(self):
+        return self.item_name
   class Meta:
     db_table = "Items"
 
 # Genresテーブルの情報
 class Genres(models.Model):
+  id = models.AutoField(primary_key=True)
   genre_name = models.CharField(max_length = 10)
+  def __str__(self):
+        return self.genre_name
   class Meta:
     db_table = "Genres"
 
 #Imagesテーブルの情報
 class Images(models.Model):
+  id = models.AutoField(primary_key=True)
   image = models.ImageField(upload_to='./images/')
+  def __str__(self):
+        return self.image
   class Meta:
     db_table = "Images"
 

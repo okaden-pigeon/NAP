@@ -28,6 +28,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+main{
+  margin: 3% ;
+}
+
 .sr-only {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -127,21 +131,6 @@ body {
 }
 
 /*
-.slide_button_back {
-  position: absolute;
-  top: 50%;
-  left: 1%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin:0;
-  font-size: 20px;
-  border: solid white 2px;
-  padding: 7px;
-  color: white;
-  text-decoration: none;
-  }
-
 .slide_button_forward{
   position: absolute;
   top: 50%;
@@ -157,6 +146,7 @@ body {
   text-decoration: none;
   }
 */
+<<<<<<< HEAD
 
 /* mail_register.html */
 .flex_test-box {
@@ -190,3 +180,26 @@ body {
   display: flex;              /* フレックスボックスにする */
   justify-content: center;
 }
+=======
+  #image_slide .slide_button_forward {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    font-size: 20px;
+    border: solid white 2px;
+    padding: 7px;
+    color: white;
+    text-decoration: none;
+    }
+
+#image_icon {
+    width: 100px;
+    height:100px;
+    border-radius:50%;
+    background-position: center;
+}
+>>>>>>> 90d3fdb2998b96c00123d2366294263c5ff056ec

@@ -1,0 +1,78 @@
+.Group {
+    margin-bottom: 24px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 0;
+    }
+    .Group-Bar {
+    position: absolute;
+    top: 12px;
+    left: 5%;
+    width: 93%;
+    height: 2px;
+    background-color: #eaeaea;/*バーの色*/
+    z-index: -1;
+    }
+    @media screen and (min-width: 768px) {
+    .Group-Bar {
+    top: 17px;
+    height: 5px;
+    }
+    }
+    .Shapeborder.isActive {
+    border: 1px solid #e2264d;
+    }
+    .Circle {
+    border-radius: 50%;
+    }
+    .Group-Item {
+    color: #b7b7b7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .Group-Item.isActive {
+    color: #e2264d;
+    }
+    .Group-Item-CircleOuter {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    @media screen and (min-width: 768px) {
+    .Group-Item-CircleOuter {
+    width: 39px;
+    height: 39px;
+    }
+    }
+    .Group-Item-CircleOuter.isActive {
+    background: #fff;
+    }
+    .Group-Item-CircleInner {
+    width: 16px;
+    height: 16px;
+    background-color: #b7b7b7;
+    display: flex;
+    align-items: center;
+    }
+    @media screen and (min-width: 768px) {
+    .Group-Item-CircleInner {
+    width: 25px;
+    height: 25px;
+    }
+    }
+    .Group-Item-CircleInner.isActive {
+    background: #e2264d;
+    }
+    .Group-Item-CircleInner:last-of-type::after {
+    content: none;
+    }
+    .Group-Item-Text {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    }

@@ -19,14 +19,19 @@
 {% endblock %}
 
 {% block content %}
-  <!-- ユーザーの出品している商品を更新順で表示-->
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="商品画像">
-    <div class="card-body">
-      <h5 class="card-title">商品名</h5>
-      <a href="/product_recreate" class="btn btn-primary">更新</a>
-      <a href="#" class="btn btn-primary">削除</a>
-      <p class="card-text">最終更新日時：〇〇月〇〇日〇〇時〇〇分</p>
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- ユーザーの出品している商品を更新順で表示-->
+    <div class="card">
+      <img src="..." class="card-img-top" alt="商品画像">
+      <div class="card-body">
+        <h5 class="card-title">商品名</h5>
+        <a href="/product_recreate" class="button">編集</a>
+        <!-- 削除したらデータを消してリダイレクト-->
+        <a href="/mylist" class="button" style="background-color: red;">削除</a>
+        <!--bootsrapのmodalでconfirmationを出してもいいかもね -->
+        <p class="card-text" style="margin-top: 10%;">最終更新日時：〇〇月〇〇日〇〇時〇〇分</p>
+      </div>
     </div>
-  </div>
+  </main>
 {% endblock %}

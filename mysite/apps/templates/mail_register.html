@@ -1,5 +1,6 @@
 {% extends "header.html" %}
 
+<<<<<<< HEAD
 {% block content %}
 <div class="flex_test-box">
     <div class="flex_test-item">
@@ -17,3 +18,66 @@
 </div>
 
 {% endblock %}
+=======
+{% block nav_bar %}
+    <div class="site-header__middle">
+      <nav class="nav">
+        <button class="nav__toggle" aria-expanded="false" type="button">
+          menu
+        </button>
+        <ul class="nav__wrapper">
+          <li class="nav__item"><a href="/login.html">ログイン</a></li>
+          <li class="nav__item"><a href="/mail_register.html">新規登録</a></li>
+        </ul>
+      </nav>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <main>
+      <div class="Group">
+        <div class="Group-Bar"></div>
+          <div class="Group-Item isActive">
+            <div class="Group-Item-CircleOuter Circle Shapeborder isActive">
+            <div class="Group-Item-CircleInner Circle Shapeborder isActive"></div>
+          </div>
+          <p class="Group-Item-Text">メールアドレス認証</p>
+        </div>
+          <div class="Group-Item">
+            <div class="Group-Item-CircleOuter Circle Shapeborder">
+            <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+          </div>
+          <p class="Group-Item-Text">大学認証</p>
+        </div>
+          <div class="Group-Item">
+            <div class="Group-Item-CircleOuter Circle Shapeborder">
+            <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+          </div>
+          <p class="Group-Item-Text">ユーザー登録</p>
+        </div>
+        <div class="Group-Item">
+          <div class="Group-Item-CircleOuter Circle Shapeborder">
+            <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+            </div>
+          <p class="Group-Item-Text">完了</p>
+        </div>
+      </div>
+
+      <form method="post">
+          <p>メールアドレス<br>
+              <input type="text" name="mail">
+          <p>メールアドレス（確認）<br>
+              <input type="text" name="mail_confirmation">
+              <!--一致しているか判断して表示-->
+              <div class="alert alert-danger d-flex align-items-center" role="alert">
+                  <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                  <div>
+                      一致していません
+                  </div>
+              </div>
+          <button href="/university_register.html" class="button" type="submit" name="mail_register" value="メールアドレス認証">メールアドレス認証</button>
+      </form>
+    </main>
+
+{% endblock %}
+>>>>>>> 90d3fdb2998b96c00123d2366294263c5ff056ec
