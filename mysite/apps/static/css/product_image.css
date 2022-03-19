@@ -24,9 +24,8 @@
   }
 
 #dragDropArea .drag-drop-buttons{
-      margin-top: 20px;
-      font-size: 12px;
-      font-size: 1.2em;
+      margin-top: 10vw;
+      font-size: 1vw;
   }
 
 .drag-drop-buttons input{
