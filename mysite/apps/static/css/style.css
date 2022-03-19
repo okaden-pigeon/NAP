@@ -126,8 +126,12 @@ main{
   display: inline-block;
 }
 
-#mypic{
+#mypic {
   position: relative;
+}
+
+#flie_input {
+  
 }
 
 /*
