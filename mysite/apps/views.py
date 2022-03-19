@@ -17,7 +17,7 @@ class IndexView(generic.TemplateView):
         context["item"] = items
         return context
     def get_context_data(self,**kwargs):
-        items = Genres.objects.all()
+        genres = Genres.objects.all()
         context = super().get_context_data(**kwargs)
         context["genre"] = genres
         return context
