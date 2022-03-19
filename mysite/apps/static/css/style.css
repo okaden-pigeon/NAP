@@ -126,11 +126,13 @@ main{
   display: inline-block;
 }
 
-#mypic{
+#mypic {
   position: relative;
 }
 
-#flie_input
+#flie_input {
+  
+}
 
 /*
 .slide_button_forward{
