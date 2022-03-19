@@ -5,7 +5,6 @@ import sys
 import pyocr
 import pyocr.builders
 
-# TODO　ファイルのパスを受け取れるようにする
 def certification(file,first,last):
     tools = pyocr.get_available_tools()
     if len(tools) == 0:
@@ -23,11 +22,10 @@ def certification(file,first,last):
         Image.open(file),
         lang=lang,
         builder=pyocr.builders.TextBuilder())
-    print(txt)
 
     if first in txt and last in txt:
-        print(1)
+        txt = ""
         return True
     else:
-        print(2)
+        txt = ""
         return False
