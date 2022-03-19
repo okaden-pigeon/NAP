@@ -83,6 +83,10 @@ main{
   display: inline-block;
 }
 
+.item_info {
+  display: flex;
+}
+
 .item_name {
 }
 
