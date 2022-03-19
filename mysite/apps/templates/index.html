@@ -19,8 +19,7 @@
 {% block content %}
   <nav class="navbar navbar-light bg-light">
     <!-- 検索機能-->
-    <form class="form-inline" action="" method="get"><!--actionのところには何を書けばいい？-->
-      {% csrf_token %}<!--いるって色んなサイトに書いてたから入れてるけどいる？-->
+    <form class="form-inline" action="" method="post"><!--actionのところには何を書けばいい？-->
       <input class="form-control mr-sm-2" type="search" placeholder="何をお探しですか" value="{{query}}" name="q" aria-label="Search"><!--queryとnameを追加した-->
       <button class="btn" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6;">検索</button>
     </form>
@@ -28,9 +27,7 @@
       <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;">
         <option selected>カテゴリー選択</option>
         <!-- 分類の表示-->
-        {% for i in genre %}
-        <option value="{{i.genre_name}}">{{i.genre_name}}</option>
-        {% endfor %}
+        <option value="??????">??????</option>
       </select>
     </form>
   </nav>

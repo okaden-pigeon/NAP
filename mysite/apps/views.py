@@ -16,11 +16,6 @@ class IndexView(generic.TemplateView):
         context = super().get_context_data(**kwargs)
         context["item"] = items
         return context
-    def get_context_data(self,**kwargs):
-        genres = Genres.objects.all()
-        context = super().get_context_data(**kwargs)
-        context["genre"] = genres
-        return context
 
 class LoginView(LoginView):
     template_name = "login.html"
