@@ -5,8 +5,14 @@
     padding: 10px;
     border: #ddd dashed 5px;
     min-height: 200px;
-    width: 40%;
+    width: 50%;
   }
+
+#drag-drop-inside{
+  width : 100% ;
+  padding-top : 100% ;
+  background-color: #29d632;
+}
 
 #dragDropArea p{
   　  color: #4169e1;
