@@ -15,5 +15,4 @@ urlpatterns = [
     path('university_register/', views.UniversityRegisterView.as_view(), name="university_register"),
     path('user_edit/', views.UserEditView.as_view(), name="user_edit"),
     path('user_register/', views.UserRegisterView.as_view(), name="user_register"),
-
-]
+    ]

@@ -2,6 +2,7 @@ from re import template
 from urllib import request
 from django.shortcuts import render
 from .models import Items
+from .models import Genres
 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -13,9 +14,9 @@ from django.views import generic
 class IndexView(LoginRequiredMixin, generic.ListView): #ListViewに変更
     template_name = "index.html"
     def get_context_data(self,**kwargs):
-        items = Items.objects.all()
         context = super().get_context_data(**kwargs)
-        context["item"] = items
+        context["item"] = Items.objects.all()
+        context["genre"] = Genres.objects.all()
         return context
 
 class LoginView(LoginView):
@@ -39,8 +40,11 @@ class MylistView(LoginRequiredMixin, generic.ListView): #ListViewに変更
     template_name = "mylist.html"
         
 class ProductCreateView(LoginRequiredMixin, generic.TemplateView):
-    def get(self, request):
-        return render(request, 'product_create.html')
+    def get_context_data(self,**kwargs):
+        items = Items.objects.all()
+        context = super().get_context_data(**kwargs)
+        context["item"] = items
+        return context
 
     def post(self, request):
         return 0
