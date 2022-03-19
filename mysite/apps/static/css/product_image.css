@@ -38,6 +38,10 @@
   color: #0067c0;
 }
 
+.file_input {
+  width: 1vw;
+}
+
 .register_button {
     -webkit-appearance: none;
        -moz-appearance: none;
