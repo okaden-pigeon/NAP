@@ -83,6 +83,10 @@ main{
   display: inline-block;
 }
 
+.item_name {
+  display: flex;
+}
+
 /* product.html */
 .slide_button a {
   display: flex;
@@ -131,7 +135,7 @@ main{
 }
 
 #flie_input {
-  
+
 }
 
 /*
@@ -171,4 +175,3 @@ main{
     border-radius:50%;
     background-position: center;
 }
-
