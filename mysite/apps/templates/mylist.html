@@ -24,8 +24,8 @@
   <main>
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <!-- ユーザーの出品している商品を更新順で表示-->
-    {% for i in # %} <!-- ユーザーの出品している商品を引っ張り出す方法がわからなかったです、、、-->
-    <div class="card">
+    {% for i in item %} <!-- ユーザーの出品している商品のみを引っ張り出す方法がわからなかったです、、、-->
+    <div class="card h-100">
       <img src="..." class="card-img-top" alt="商品画像">
       <div class="card-body">
         <h5 class="card-title">{{i.item_name}}</h5>
@@ -33,7 +33,7 @@
         <!-- 削除したらデータを消してリダイレクト-->
         <a href="/mylist" class="button" style="background-color: red;">削除</a>
         <!--bootsrapのmodalでconfirmationを出してもいいかもね -->
-        <p class="card-text" style="margin-top: 10%;">最終更新日時：{{i.#}}</p> <!-- 商品の更新日時をデータベースに追加して欲しいです。-->
+        <p class="card-text" style="margin-top: 10%;">最終更新日時：</p> <!-- 商品の更新日時をデータベースに追加して欲しいです。-->
       </div>
     </div>
     {% endfor %}

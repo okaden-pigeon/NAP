@@ -21,13 +21,12 @@
   <nav class="navbar navbar-light bg-light">
     <!-- 検索機能-->
     <form class="form-inline" action="" method="post"><!--actionのところには何を書けばいい？-->
-      {% csrf_token %}<!--いるって色んなサイトに書いてたから入れてるけどいる？-->
       <input class="form-control mr-sm-2" type="search" placeholder="何をお探しですか" value="{{query}}" name="q" aria-label="Search"><!--queryとnameを追加した-->
-      <button class="btn" action="" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6;">検索</button>
+      <button class="btn" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6;">検索</button>
     </form>
     <form class="form-inline" method="post">
       <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;">
-        <option selected>カテゴリー選択</option>
+        <option selected disabled>カテゴリー選択</option>
         <!-- 分類の表示-->
         {% for i in genre %}
         <option value="{{i.genre_name}}">{{i.genre_name}}</option>
@@ -38,6 +37,7 @@
   <main>
     <!-- <img src = "{% static 'apps/test2.jpeg' %}" -->
     <!-- ユーザーの大学の出品中の商品を新着順で表示-->
+    {% if item %}
     <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for i in item %}
     <div class="col">
@@ -50,8 +50,11 @@
       </div>
     </div>
     {% endfor %}
+    {% else %}
+    <div class="ui segment warning message">
+      <p>検索結果はありません。</p>
+    </div>
+    {% endif %}
 
-    <!-- 検索結果表示-->
-    
   </main>
 {% endblock %}
