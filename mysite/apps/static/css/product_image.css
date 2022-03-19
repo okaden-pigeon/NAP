@@ -30,8 +30,13 @@
   }
 
 .drag-drop-buttons input{
-      margin: auto;
+   margin: auto;
   }
+
+.drag-drop-info {
+  font-size: 1vw;
+  color: #0067c0;
+}
 
 .register_button {
     -webkit-appearance: none;
