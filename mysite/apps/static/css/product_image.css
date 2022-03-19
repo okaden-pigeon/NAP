@@ -78,10 +78,7 @@
 
 /* 出品するボタン */
 .product_register_submit_button {
-    margin-top: 20px;
-    font-size: 12px;
-    font-size: 1.2em;
-    width: 150%;
+    font-size: 1vw;
 }
 
 .product_register_submit_button input {
