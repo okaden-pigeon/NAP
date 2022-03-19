@@ -18,15 +18,14 @@
 {% endblock %}
 {% block content %}
   <nav class="navbar navbar-light bg-light">
+    <!-- 検索機能-->
     <form class="form-inline" method="post">
       <input class="form-control mr-sm-2" type="search" placeholder="何をお探しですか" aria-label="Search">
-      <!-- 検索機能-->
       <button class="btn" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6;">検索</button>
     </form>
     <form class="form-inline" method="post">
         <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;">
         <option selected>カテゴリー選択</option>
-        <!-- 分類の表示-->
         {% for i in genre %}
         <option value="{{i.genre_name}}">{{i.genre_name}}</option>
         {% endfor %}
