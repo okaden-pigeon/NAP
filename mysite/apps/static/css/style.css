@@ -85,12 +85,11 @@ main{
 
 .item_info {
   float: right;
-  margin-right: 20%;
+  margin-right: 20vw;
 }
 
 .item_info p{
-  font-size: 15px;
-  font-size: 1.5em;
+  font-size: 1.5vw;
 }
 
 .item_info input{
