@@ -32,11 +32,11 @@
       <button class="register_button" type="submit" name="submit" value="登録">画像を登録</button>
   </form>
   <form method="post">
-      <p>item_name<br> <!-- item_name お願いします -->
-      <input id="area1" type="text" name="product_name" maxlength="40" onkeyup="product_name_str_len();">
+      <p>商品名<br>
+      <input id="area1" type="text" name="product_name" maxlength="40" onkeyup="product_name_str_len();" value="item_name" required>  <!-- item_name お願いします -->
       <div id="product_name_str_len">0/40文字</div></p>
       <p>商品の状態<br>
-      <select name="condition" required>
+      <select name="condition" required>  <!-- item_name お願いします -->
         <option value="">選択してください</option>
         <option value="unused">新品、未使用</option>
         <option value="almost_new">未使用に近い</option>
