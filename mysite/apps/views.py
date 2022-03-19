@@ -12,14 +12,9 @@ from django.views import generic
 class IndexView(generic.TemplateView):
     template_name = "index.html"
     def get_context_data(self,**kwargs):
-        items = Items.objects.all()
         context = super().get_context_data(**kwargs)
-        context["item"] = items
-        return context
-    def get_context_data(self,**kwargs):
-        genres = Genres.objects.all()
-        context = super().get_context_data(**kwargs)
-        context["genre"] = genres
+        context["item"] = Items.objects.all()
+        context["genre"] = Genres.objects.all()
         return context
 
 class LoginView(LoginView):
@@ -33,9 +28,19 @@ class MyhistoryView(generic.TemplateView):
 
 class MylistView(generic.TemplateView):
     template_name = "mylist.html"
+    def get_context_data(self,**kwargs):
+        items = Items.objects.all()
+        context = super().get_context_data(**kwargs)
+        context["item"] = items
+        return context
 
 class ProductCreateView(generic.TemplateView):
     template_name = "product_create.html"
+    def get_context_data(self,**kwargs):
+        genres = Genres.objects.all()
+        context = super().get_context_data(**kwargs)
+        context["genre"] = genres
+        return context
 
 class ProductRecreateView(generic.TemplateView):
     template_name = "product_recreate.html"
