@@ -19,20 +19,17 @@
 {% block content %}
   <nav class="navbar navbar-light bg-light">
     <!-- 検索機能-->
-    <form class="form-inline" method="post">
+    <form class="form-inline" action="" method="post">
       <input class="form-control mr-sm-2" type="search" placeholder="何をお探しですか" aria-label="Search">
-      <button class="btn" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6;">検索</button>
+      <button class="btn" action="" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6;">検索</button>
     </form>
     <form class="form-inline" method="post">
-        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;">
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;">
         <option selected>カテゴリー選択</option>
         <!-- 分類の表示-->
-        <option value="unused">教科書、参考書</option>
-        <option value="almost_new">家具</option>
-        <option value="no_damage">家電</option>
-        <option value="low_damage">自転車</option>
-        <option value="middle_damage">生活雑貨</option>
-        <option value="high_damage">その他</option>
+        {% for i in genre %}
+        <option value="{{i.genre_name}}">{{i.genre_name}}</option>
+        {% endfor %}
       </select>
     </form>
   </nav>
