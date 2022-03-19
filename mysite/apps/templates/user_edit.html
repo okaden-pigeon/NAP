@@ -37,7 +37,7 @@
   </form>
   <form method="post">
       <p>ニックネーム<br>
-        <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="現在のニックネーム">
+        <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="{{user_name}}">
         <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
         <div id="nickname_str_len">0/40文字</div></p>
       <label for="inputPassword5" class="form-label">パスワード</label>
@@ -50,15 +50,14 @@
       <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
       <!--一致しているか判断してアラート表示(できたら)-->
       <p>学部<br>
-        <!-- ユーザーの大学の学部を表示-->
-        <select name="condition" required>
-          <option value="">現在の学部</option>
-          <option value="unused"></option>
-          <option value="almost_new">法学部</option>
-          <option value="no_damage">経済学部</option>
-          <option value="low_damage">経営学部</option>
-          <option value="middle_damage">理学部</option>
-          <option value="high_damage">工学部</option>
+        <!-- ユーザーの大学の学部を表示(これは結局どうなったんだっけ)-->
+        <select name="condition">
+          <option value="">{{#}}}</option><!-- ユーザーの大学の学部をデータベースに作成できれば-->
+          <option value="法学部">法学部</option>
+          <option value="経済学部">経済学部</option>
+          <option value="経営学部">経営学部</option>
+          <option value="理学部">理学部</option>
+          <option value="工学部">工学部</option>
         </select></p>
       <button class="button" type="submit" name="save" value="保存">保存</button>
   </form>
