@@ -84,7 +84,7 @@ main{
 }
 
 .item_info {
-
+  float: right; 
 }
 
 .item_name {
