@@ -13,7 +13,7 @@ from django.views.generic import TemplateView, ListView
 from django.views import generic
 
 # ログイン機能を必須にするには第一引数に(LoginRequiredMixin)を入れる
-class IndexView(LoginRequiredMixin, generic.ListView): #ListViewに変更
+class IndexView(generic.TemplateView): #ListViewに変更
     template_name = "index.html"
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)

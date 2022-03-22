@@ -1,6 +1,7 @@
 from operator import truediv
 from PIL import Image
 import sys
+import itaizi
 
 import pyocr
 import pyocr.builders
@@ -23,7 +24,7 @@ def certification(file,first,last):
         lang=lang,
         builder=pyocr.builders.TextBuilder())
 
-    if first in txt and last in txt:
+    if itaizi.to_seizi(first) in txt and itaizi.to_seizi(last) in txt:
         txt = ""
         return True
     else:
