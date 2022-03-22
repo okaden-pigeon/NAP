@@ -1,6 +1,6 @@
 from re import template
 from urllib import request
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Items
 from .models import Genres
 from .forms import EditItemForm
@@ -11,6 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView, ListView
 
 from django.views import generic
+from .jobs.certification import certification
 
 # ログイン機能を必須にするには第一引数に(LoginRequiredMixin)を入れる
 class IndexView(generic.TemplateView): #ListViewに変更
@@ -80,7 +81,24 @@ class UniversityRegisterView(generic.TemplateView):
         return render(request, 'university_register.html')
 
     def post(self, request):
+        first = self.request.POST.get("first",None)
+        last = self.request.POST.get("last",None)
+        file = self.request.POST.get("photo",None)
+        if (certification(file,first,last)):
+            return redirect("user_register.html")
+        else:
+            return render(request,"university_register.html",context = {"alert":"error"})
         return 0
+        
+def result(request):
+    first = request.POST.get("first",None)
+    last = request.POST.get("last",None)
+    file = request.POST.get("photo",None)
+    if (certification(file,first,last)):
+        return redirect("UserRegisterView")
+    else:
+        return render(request,"university_register.html",context = {"alert":"error"}) 
+
 
 class UserEditView(LoginRequiredMixin, generic.TemplateView):
     def get(self, request):
