@@ -19,7 +19,8 @@
 {% endblock %}
 {% block content %}
 <main>
-  <form method="post" enctype="multipart/form-data">
+  <form method="post"  action = "TODO" enctype="multipart/form-data">
+    {% csrf_token%}
       <div id="dragDropArea">
           <div class="drag-drop-inside">
               <p class="drag-drop-buttons">
