@@ -2,6 +2,8 @@ from re import template
 from django.shortcuts import render
 from .models import Items
 from .models import Genres
+from .forms import EditItemForm
+from django.contrib.auth.models import User
 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -56,3 +58,19 @@ class UserEditView(generic.TemplateView):
 
 class UserRegisterView(generic.TemplateView):
     template_name = "user_register.html"
+
+def index(request): # product_recreate.html
+    queryset = User.objects.get(id=request.user.id)
+
+    initial_data = {
+        'item_name': queryset.item_name,
+    }
+
+    form = EditItemForm(
+        initial=initial_data
+    )
+
+    context = {
+        'form': form
+    }
+    return render(request, 'product_recreate.html', context)
