@@ -20,7 +20,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('accounts/', include('accounts.urls')), # django学習帳 3-1
-    path('', include('register.urls')), # https://blog.narito.ninja/detail/40/
+    # 以下コメントアウトした（むら）
+    # path('accounts/', include('allauth.urls')),
+    # path('accounts/', include('accounts.urls')), # django学習帳 3-1
+    # path('', include('register.urls')), # https://blog.narito.ninja/detail/40/
 ]

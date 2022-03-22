@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'accounts.apps.AccountsConfig',
+# コメントアウトした（むら）
+    # 'accounts.apps.AccountsConfig',
     'apps.apps.AppsConfig',
 
     'django.contrib.sites',
@@ -163,5 +164,6 @@ ACCOUNT_LOGOUT_REDIRECT_URL = 'app:welcome'  # ログアウト成功後の遷移
 ACCOUNT_LOGOUT_ON_GET = True  # 確認を行わずログアウトする設定
 
 
-AUTH_USER_MODEL = 'acounts.CustomUser' #カスタムユーザーモデルを定義
+# コメントアウトした（むら）
+# AUTH_USER_MODEL = 'acounts.CustomUser' #カスタムユーザーモデルを定義
  
