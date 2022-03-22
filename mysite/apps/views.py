@@ -10,6 +10,22 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views import generic
 
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import (
+    LoginView, LogoutView
+)
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.signing import BadSignature, SignatureExpired, loads, dumps
+from django.http import Http404, HttpResponseBadRequest
+from django.shortcuts import redirect
+from django.template.loader import render_to_string
+from django.views import generic
+from .forms import (
+    LoginForm, UserCreateForm
+)
+
 # ログイン機能を必須にするには第一引数に(LoginRequiredMixin)を入れる
 class IndexView(generic.TemplateView):
     template_name = "index.html"
