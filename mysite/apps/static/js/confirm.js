@@ -13,7 +13,7 @@ function CheckEmail_1() {
     }
   };
 
-  function CheckPassword1() {
+  function CheckPassword_1() {
     var password = document.getElementById("inputPassword1").value; //メールフォームの値を取得
     var password_confirm = document.getElementById("inputPassword1_confirm").value; //メール確認用フォームの値を取得
     // パスワードの一致確認
@@ -25,7 +25,7 @@ function CheckEmail_1() {
     }
   };
 
-  function CheckPassword2() {
+  function CheckPassword_2() {
     var password = document.getElementById("inputPassword2").value; //メールフォームの値を取得
     var password_confirm = document.getElementById("inputPassword2_confirm").value; //メール確認用フォームの値を取得
     // パスワードの一致確認
