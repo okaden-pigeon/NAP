@@ -162,3 +162,6 @@ LOGIN_REDIRECT_URL = 'app:home'  # ログイン成功後の遷移先の指定
 ACCOUNT_LOGOUT_REDIRECT_URL = 'app:welcome'  # ログアウト成功後の遷移先の指定
 
 ACCOUNT_LOGOUT_ON_GET = True  # 確認を行わずログアウトする設定
+
+LOGIN_URL = 'register:login'
+LOGIN_REDIRECT_URL = 'register:top'
