@@ -42,10 +42,12 @@ class MylistView(LoginRequiredMixin, generic.ListView): #ListViewに変更
 class ProductCreateView(LoginRequiredMixin, generic.TemplateView):
     def get_context_data(self,**kwargs):
         items = Items.objects.all()
+        genres = Genres.objects.all()
         context = super().get_context_data(**kwargs)
         context["item"] = items
+        context["genre"] = genres
         return context
-
+        
     def post(self, request):
         return 0
 
