@@ -1,4 +1,2 @@
-let text3 = document.querySelector("input[name='name1']");
-text3.placeholder = "Hi.";
-let text4 = document.querySelector("textarea[name='name1']");
-text4.placeholder = "Hi.";
+let product_name = document.querySelector("input[name='product_name']");
+product_name.placeholder = "Hi.";
