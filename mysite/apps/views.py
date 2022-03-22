@@ -73,4 +73,4 @@ def index(request): # product_recreate.html
     context = {
         'form': form
     }
-    return render(request, 'product_recreate.html', context)
+    return render(request, 'apps/product_recreate.html', {"form": form})
