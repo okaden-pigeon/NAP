@@ -3,7 +3,7 @@ from urllib import request
 from django.shortcuts import render
 from .models import Items
 from .models import Genres
-from .forms import EditItemForm
+from .forms import EditItemForm, LoginForm
 from django.contrib.auth.models import User
 
 from django.contrib.auth.views import LoginView
@@ -13,7 +13,7 @@ from django.views.generic import TemplateView, ListView
 from django.views import generic
 
 # ログイン機能を必須にするには第一引数に(LoginRequiredMixin)を入れる
-class IndexView(LoginRequiredMixin, generic.ListView): #ListViewに変更
+class IndexView(generic.TemplateView): #ListViewに変更希望
     template_name = "index.html"
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
@@ -23,9 +23,11 @@ class IndexView(LoginRequiredMixin, generic.ListView): #ListViewに変更
 
 class LoginView(LoginView):
     def get(self, request):
+        form_class = LoginForm
         return render(request, 'login.html')
 
     def post(self, request):
+        
         return 0
 
 class MailRegisterView(generic.TemplateView):
@@ -38,16 +40,20 @@ class MailRegisterView(generic.TemplateView):
 class MyhistoryView(LoginRequiredMixin, generic.TemplateView):
     template_name = "myhistory.html"
 
-class MylistView(LoginRequiredMixin, generic.ListView): #ListViewに変更
+class MylistView(LoginRequiredMixin, generic.TemplateView): #ListViewに変更希望
     template_name = "mylist.html"
         
 class ProductCreateView(LoginRequiredMixin, generic.TemplateView):
-    def get_context_data(self,**kwargs):
+    def get_context_data(self, p, **kwargs):
         items = Items.objects.all()
         genres = Genres.objects.all()
         context = super().get_context_data(**kwargs)
         context["item"] = items
         context["genre"] = genres
+
+        # URLからitem_idを取得
+        request_item_id = p
+
         return context
         
     def post(self, request):
@@ -55,17 +61,25 @@ class ProductCreateView(LoginRequiredMixin, generic.TemplateView):
 
 class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
 
-    def get_context_data(self,**kwargs):
+    def get_context_data(self, p, **kwargs):
         genres = Genres.objects.all()
         context = super().get_context_data(**kwargs)
         context["genre"] = genres
+
+        # URLからitem_idを取得
+        request_item_id = p
+
         return context
 
     def post(self, request):
         return 0
 
 class ProductView(LoginRequiredMixin, generic.TemplateView):
-    def get(self, request):
+    def get(self, p, request):
+
+        # URLからitem_idを取得
+        request_item_id = p
+
         return render(request, 'product.html')
 
     def post(self, request):

@@ -31,15 +31,15 @@ ALLOWED_HOSTS = ["*"] # ドメインの許可
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'django.contrib.admin', #マイグレーション前にコメントアウト
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-# コメントアウトした（むら）
-    # 'accounts.apps.AccountsConfig',
+    # コメントアウトはずした（たいち）
+    'accounts.apps.AccountsConfig',
     'apps.apps.AppsConfig',
 
     'django.contrib.sites',
@@ -158,12 +158,14 @@ ACCOUNT_EMAIL_REQUIRED = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # ローカルでの開発のためメールをコンソールで表示する
 
+LOGIN_URL = 'login' #ログインしていないユーザーの場合に、リダイレクト先のURLを指定
 LOGIN_REDIRECT_URL = 'app:home'  # ログイン成功後の遷移先の指定
 ACCOUNT_LOGOUT_REDIRECT_URL = 'app:welcome'  # ログアウト成功後の遷移先の指定
 
 ACCOUNT_LOGOUT_ON_GET = True  # 確認を行わずログアウトする設定
 
 
-# コメントアウトした（むら）
-# AUTH_USER_MODEL = 'acounts.CustomUser' #カスタムユーザーモデルを定義
+# コメントアウトはずした（たいち）
+AUTH_USER_MODEL = 'accounts.CustomUser', #カスタムユーザーモデルを定義
+
  
