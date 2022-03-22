@@ -41,11 +41,12 @@ class MailRegisterView(generic.TemplateView):
 class MyhistoryView(LoginRequiredMixin, generic.TemplateView):
     template_name = "myhistory.html"
 
-class MylistView(LoginRequiredMixin, generic.ListView): #ListViewに変更
+class MylistView(generic.TemplateView): #ListViewに変更
     template_name = "mylist.html"
         
-class ProductCreateView(LoginRequiredMixin, generic.TemplateView):
-    def get_context_data(self,**kwargs):
+class ProductCreateView(generic.TemplateView):
+    template_name = "product_create.html"
+    def get_context_data(self,**kwargs):  
         items = Items.objects.all()
         genres = Genres.objects.all()
         context = super().get_context_data(**kwargs)
