@@ -3,6 +3,8 @@ from urllib import request
 from django.shortcuts import render
 from .models import Items
 from .models import Genres
+from .forms import EditItemForm
+from django.contrib.auth.models import User
 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -52,8 +54,12 @@ class ProductCreateView(LoginRequiredMixin, generic.TemplateView):
         return 0
 
 class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
-    def get(self, request):
-        return render(request, 'product_recreate.html')
+
+    def get_context_data(self,**kwargs):
+        genres = Genres.objects.all()
+        context = super().get_context_data(**kwargs)
+        context["genre"] = genres
+        return context
 
     def post(self, request):
         return 0
@@ -85,3 +91,16 @@ class UserRegisterView(generic.TemplateView):
 
     def post(self, request):
         return 0
+
+    def index(request): # product_recreate.html
+        queryset = User.objects.get(id=request.user.id)
+
+        initial_data = {
+            'item_name': queryset.item_name,
+        }
+
+        form = EditItemForm(
+            initial=initial_data
+        )
+
+        return render(request, 'apps/product_recreate.html', {"form": form})
