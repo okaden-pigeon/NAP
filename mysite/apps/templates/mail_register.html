@@ -1,5 +1,5 @@
 {% extends "header.html" %}
-
+{% load static %}
 {% block content %}
     <main>
       <div class="Group">
@@ -32,12 +32,14 @@
 
       <form method="post">
           <p>メールアドレス<br>
-              <input type="text" name="mail" required>
+              <input type="email" name="mail" id="mail1" required>
           <p>メールアドレス（確認）<br>
-              <input type="text" name="mail_confirmation" required>
+              <input type="email" name="mail_confirm" id="mail1_confirm" required>
               <!--一致しているか判断してアラート表示(できたら)-->
           <button href="/university_register.html" class="button" type="submit" name="mail_register" value="メールアドレス認証">メールアドレス認証</button>
       </form>
+    <!--アラート確認のため入力>
+    <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+　　　　　　　　<-->
     </main>
-
 {% endblock %}

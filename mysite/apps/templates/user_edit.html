@@ -43,15 +43,18 @@
         <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
         <div id="nickname_str_len">0/40文字</div></p>
       <label for="inputPassword5" class="form-label">パスワード</label>
-      <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+      <input type="password" id="inputPassword1" class="form-control" aria-describedby="passwordHelpBlock">
 
       <div id="passwordHelpBlock" class="form-text">
           8文字以上16文字以内で入力してください。
       </div>
       <label for="inputPassword5" class="form-label">パスワード（確認）</label>
-      <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+      <input type="password" id="inputPassword1_confirm" class="form-control" aria-describedby="passwordHelpBlock">
       <!--一致しているか判断してアラート表示(できたら)-->
-      <p>学部<br>
+      <!--アラート確認のため入力>
+      <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+  　　　　　　　　<-->
+        <p>学部<br>
         <!-- ユーザーの大学の学部を表示(これは結局どうなったんだっけ)-->
         <select name="condition">
           <option value="">{{}}</option><!-- ユーザーの大学の学部をデータベースに作成できれば-->
