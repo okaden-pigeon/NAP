@@ -17,7 +17,10 @@ class IndexView(generic.TemplateView): #ListViewに変更
     template_name = "index.html"
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
-        context["item"] = Items.objects.all()
+        context["item"] = Items.objects.all().values()
+        for i in context["item"]:
+            i["icon"] = i["icon"].replace("static/","")
+
         context["genre"] = Genres.objects.all()
         return context
 
