@@ -12,3 +12,15 @@ function CheckEmail_1() {
       return true;
     }
   };
+
+  function CheckPassword() {
+    var password = document.getElementById("mail").value; //メールフォームの値を取得
+    var password_confirm = document.getElementById("mail_confirm").value; //メール確認用フォームの値を取得
+    // パスワードの一致確認
+    if (password != password_confirm){
+      alert("パスワードと確認用パスワードが一致しません"); // 一致していなかったら、エラーメッセージを表示する
+      return false;
+    }else{
+      return true;
+    }
+  };
