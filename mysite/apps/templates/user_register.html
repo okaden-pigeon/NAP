@@ -8,7 +8,7 @@
         </button>
         <ul class="nav__wrapper">
           <li class="nav__item"><a href="/login.html">ログイン</a></li>
-          <li class="nav__item"><a href="/mail_register.html">新規登録</a></li>
+          <!-- <li class="nav__item"><a href="/mail_register.html">新規登録</a></li> -->
         </ul>
       </nav>
     </div>
@@ -58,17 +58,17 @@
     <form method="post">
       {% csrf_token%}
         <!--認証した大学名を表示-->
-        <p>〇〇大学<br>
-        <p>学部<br>
+        <!-- <p>〇〇大学<br> -->
+        <!-- <p>学部<br> -->
         <!--認証した大学の学部を選択-->
-        <select name="condition" required>
+        <!-- <select name="condition" required>
             <option value="">選択してください</option>
             <option value="unused">法学部</option>
             <option value="almost_new">経済学部</option>
             <option value="no_damage">経営学部</option>
             <option value="low_damage">理学部</option>
             <option value="middle_damage">工学部</option>
-        </select></p>
+        </select></p> -->
         <p>ニックネーム<br>
             <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="ニックネーム" required>
             <script type="text/javascript" src="{% static 'js/count.js' %}"></script>

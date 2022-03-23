@@ -117,9 +117,10 @@ class UniversityRegisterView(generic.TemplateView):
 #     first = request.POST.get("first",None)
 #     last = request.POST.get("last",None)
 #     file = request.POST.get("photo",None)
+#     university = request.POST.get("university",None)
 #     form = ItemInfo(request.POST,request.FILES)
 #     if (True):
-#         return redirect("user_register/")
+#         return render(request,"user_register/",{"university:university})
 #     else:
 #         return render(request,"university_register.html",context = {"alert":"error"}) 
 
@@ -133,9 +134,9 @@ class UserEditView(LoginRequiredMixin, generic.TemplateView):
 
 def user_register(request):
     if request.method == "POST":
-        form = UserInfo(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
+    #     form = UserInfo(request.POST,request.FILES)
+    #     if form.is_valid():
+    #         form.save()
             return redirect("/")
     else:
         return render(request,"user_register.html")
@@ -147,15 +148,15 @@ def user_register(request):
 #     def post(self, request):
 #         return 0
 
-    def index(request): # product_recreate.html
-        queryset = User.objects.get(id=request.user.id)
+    # def index(request): # product_recreate.html
+    #     queryset = User.objects.get(id=request.user.id)
 
-        initial_data = {
-            'item_name': queryset.item_name,
-        }
+    #     initial_data = {
+    #         'item_name': queryset.item_name,
+    #     }
 
-        form = EditItemForm(
-            initial=initial_data
-        )
+    #     form = EditItemForm(
+    #         initial=initial_data
+    #     )
 
-        return render(request, 'apps/product_recreate.html', {"form": form})
+    #     return render(request, 'apps/product_recreate.html', {"form": form})
