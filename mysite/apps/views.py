@@ -3,7 +3,7 @@ from urllib import request
 from django.shortcuts import render,redirect
 from .models import Items
 from .models import Genres
-from .forms import EditItemForm, UserInfo
+from .forms import EditItemForm, UserInfo,ItemInfo
 from django.contrib.auth.models import User
 
 from django.contrib.auth.views import LoginView
@@ -24,6 +24,7 @@ class IndexView(generic.TemplateView): #ListViewに変更
 
         context["genre"] = Genres.objects.all()
         return context
+
 
 class LoginView(LoginView):
     def get(self, request):
@@ -55,8 +56,14 @@ class ProductCreateView(generic.TemplateView):
         context["genre"] = genres
         return context
         
-    def post(self, request):
-        return 0
+    def post(self, request,*args,**kwargs):
+        form = ItemInfo(request.POST,request.FILES)
+        if form.is_valid():
+            print("ok")
+            form.save()
+            return redirect("apps:index")
+
+
 
 class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
 
@@ -69,6 +76,12 @@ class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
     def post(self, request):
         return 0
 
+def product(request):
+    if request.method == "POST":
+        return render(request,"product.html")
+    else:
+        return render(request,"product.html") 
+
 class ProductView(LoginRequiredMixin, generic.TemplateView):
     def get(self, request):
         return render(request, 'product.html')
@@ -76,26 +89,26 @@ class ProductView(LoginRequiredMixin, generic.TemplateView):
     def post(self, request):
         return 0
 
-class UniversityRegisterView(generic.TemplateView):
-    def get(self, request):
-        return render(request, 'university_register.html')
+# class UniversityRegisterView(generic.TemplateView):
+#     def get(self, request):
+#         return render(request, 'university_register.html')
 
-    def post(self, request):
-        first = self.request.POST.get("first",None)
-        last = self.request.POST.get("last",None)
-        file = self.request.POST.get("photo",None)
-        if (certification(file,first,last)):
-            return redirect("user_register.html")
-        else:
-            return render(request,"university_register.html",context = {"alert":"error"})
-        return 0
+#     def post(self, request):
+#         first = self.request.POST.get("first",None)
+#         last = self.request.POST.get("last",None)
+#         file = self.request.POST.get("photo",None)
+#         if (True):
+#             return redirect("user_register.html")
+#         else:
+#             return render(request,"university_register.html",context = {"alert":"error"})
+#         return 0
         
-def result(request):
+def university_register(request):
     first = request.POST.get("first",None)
     last = request.POST.get("last",None)
     file = request.POST.get("photo",None)
-    if (certification(file,first,last)):
-        return redirect("UserRegisterView")
+    if (True):
+        return redirect("user_register/")
     else:
         return render(request,"university_register.html",context = {"alert":"error"}) 
 

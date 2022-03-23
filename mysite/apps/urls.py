@@ -16,11 +16,10 @@ urlpatterns = [
     path('mylist/', views.MylistView.as_view(), name="mylist"),
     path('product_create/', views.ProductCreateView.as_view(), name="product_create"),
     path('product_recreate/', views.ProductRecreateView.as_view(), name="product_recreate"),
-    path('product/', views.ProductView.as_view(), name="product"),
-    path('university_register/', views.UniversityRegisterView.as_view(), name="university_register"),
+    path('product/', views.product, name="product"),
+    path('university_register/', views.university_register, name="university_register"),
     path('user_edit/', views.UserEditView.as_view(), name="user_edit"),
     path('user_register/', views.user_register, name="user_register"),
-    path("result",views.result,name = "result"),
     ]
 
 urlpatterns += staticfiles_urlpatterns()

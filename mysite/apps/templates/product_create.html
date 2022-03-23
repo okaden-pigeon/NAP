@@ -19,12 +19,12 @@
 {% endblock %}
 {% block content %}
 <main>
-  <form method="post"  action = "TODO" enctype="multipart/form-data">
+  <form method="post"  action = "" enctype="multipart/form-data">
     {% csrf_token%}
       <div id="dragDropArea">
           <div class="drag-drop-inside">
               <p class="drag-drop-buttons">
-                  <input id="file_input" type="file" accept="image/*" value="ファイルを選択" name="photo" onChange="photoPreview(event)">
+                  <input id="file_input" type="file" accept="image/*" value="ファイルを選択" name="icon" onChange="photoPreview(event)">
               </p>
               <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
               <div id="previewArea"></div>
@@ -35,7 +35,7 @@
       -->
   <div class="item_info">
       <p class="item_name">商品名<br>
-      <input id="area1" type="text" name="product_name" maxlength="40" onkeyup="product_name_str_len();">
+      <input id="area1" type="text" name="item_name" maxlength="40" onkeyup="product_name_str_len();">
       <div id="product_name_str_len">0/40文字</div></p>
       <p>商品の状態<br>
       <select name="condition" required>
@@ -55,7 +55,7 @@
         {% endfor %}
       </select></p>
       <p>商品の説明<br>
-      <textarea id="area2" name="comment" cols="30" rows="3" maxlength="500" onkeyup="product_explanation_str_len();"></textarea>
+      <textarea id="area2" name="item_description" cols="30" rows="3" maxlength="500" onkeyup="product_explanation_str_len();"></textarea>
       <div id="strLen">0/500文字</div></p>
       <button class="product_register_submit_button" type="submit" name="submit" value="出品">出品する</button>
       </div>
