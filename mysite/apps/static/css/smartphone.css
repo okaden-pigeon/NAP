@@ -32,10 +32,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-main{
-  margin: 3% ;
-}
-
 .sr-only {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
