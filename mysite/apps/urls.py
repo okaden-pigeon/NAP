@@ -17,7 +17,7 @@ urlpatterns = [
     path('product_create/', views.ProductCreateView.as_view(), name="product_create"),
     path('product_recreate/', views.ProductRecreateView.as_view(), name="product_recreate"),
     path('product/', views.product, name="product"),
-    path('university_register/', views.university_register, name="university_register"),
+    path('university_register/', views.UniversityRegisterView.as_view(), name="university_register"),
     path('user_edit/', views.UserEditView.as_view(), name="user_edit"),
     path('user_register/', views.user_register, name="user_register"),
     ]

@@ -3,7 +3,7 @@ from urllib import request
 from django.shortcuts import render,redirect
 from .models import Items
 from .models import Genres
-from .forms import EditItemForm, UserInfo,ItemInfo
+from .forms import  EditItemForm,ItemInfo
 from django.contrib.auth.models import User
 
 from django.contrib.auth.views import LoginView
@@ -24,6 +24,14 @@ class IndexView(generic.TemplateView): #ListViewに変更
 
         context["genre"] = Genres.objects.all()
         return context
+    
+    def post(self,request,*args,**kwargs):
+        genre = request.POST["genre"]
+        if genre != "":
+            return redirect("apps:index")
+        else:
+            return redirect("apps:index")
+            
 
 
 class LoginView(LoginView):
@@ -89,28 +97,31 @@ class ProductView(LoginRequiredMixin, generic.TemplateView):
     def post(self, request):
         return 0
 
-# class UniversityRegisterView(generic.TemplateView):
-#     def get(self, request):
-#         return render(request, 'university_register.html')
+class UniversityRegisterView(generic.TemplateView):
+    def get(self, request):
+        return render(request, 'university_register.html')
 
-#     def post(self, request):
-#         first = self.request.POST.get("first",None)
-#         last = self.request.POST.get("last",None)
-#         file = self.request.POST.get("photo",None)
-#         if (True):
-#             return redirect("user_register.html")
-#         else:
-#             return render(request,"university_register.html",context = {"alert":"error"})
-#         return 0
+    # def post(self, request,*args,**kwargs):
+    #     # first = self.request.POST
+    #     form = CheckForm(request.POST,request.FILES)
+    #     if form.is_valid():
+    #         print("ok")
+    #         form.save()
+    #     file = Check.objects.get(pk=1)
+    #     if ():
+    #         return redirect("user_register.html")
+    #     else:
+    #         return render(request,"university_register.html",context = {"alert":"error"})
         
-def university_register(request):
-    first = request.POST.get("first",None)
-    last = request.POST.get("last",None)
-    file = request.POST.get("photo",None)
-    if (True):
-        return redirect("user_register/")
-    else:
-        return render(request,"university_register.html",context = {"alert":"error"}) 
+# def university_register(request):
+#     first = request.POST.get("first",None)
+#     last = request.POST.get("last",None)
+#     file = request.POST.get("photo",None)
+#     form = ItemInfo(request.POST,request.FILES)
+#     if (True):
+#         return redirect("user_register/")
+#     else:
+#         return render(request,"university_register.html",context = {"alert":"error"}) 
 
 
 class UserEditView(LoginRequiredMixin, generic.TemplateView):

@@ -68,6 +68,11 @@ class Images(models.Model):
   class Meta:
     db_table = "Images"
 
+class Check(models.Model):
+  image = models.ImageField(upload_to = "./images/")
+  def __str__(self):
+    return self.image
+
 # 商品情報と分類をつなぐためのテーブル
 class ItemClassification(models.Model):
   item_id = models.IntegerField()
