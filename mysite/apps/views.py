@@ -3,7 +3,7 @@ from urllib import request
 from django.shortcuts import render,redirect
 from .models import Items
 from .models import Genres
-from .forms import EditItemForm
+from .forms import EditItemForm, UserInfo
 from django.contrib.auth.models import User
 
 from django.contrib.auth.views import LoginView
@@ -107,12 +107,21 @@ class UserEditView(LoginRequiredMixin, generic.TemplateView):
     def post(self, request):
         return 0
 
-class UserRegisterView(generic.TemplateView):
-    def get(self, request):
-        return render(request, 'user_register.html')
+def user_register(request):
+    if request.method == "POST":
+        form = UserInfo(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+    else:
+        return render(request,"user_register.html")
 
-    def post(self, request):
-        return 0
+# class UserRegisterView(generic.TemplateView):
+#     def get(self, request):
+#         return render(request, 'user_register.html')
+
+#     def post(self, request):
+#         return 0
 
     def index(request): # product_recreate.html
         queryset = User.objects.get(id=request.user.id)
