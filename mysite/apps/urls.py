@@ -14,7 +14,7 @@ urlpatterns = [
     path('mail_register/', views.MailRegisterView.as_view(), name="mail_register"),
     path('myhistory/', views.MyhistoryView.as_view(), name="myhistory"),
     path('mylist/', views.MylistView.as_view(), name="mylist"),
-    
+   
     # pにはItem_idをいれ、個別のページにする
     path('product_create/<p>', views.ProductCreateView.as_view(), name="product_create"),
     path('product_recreate/<p>', views.ProductRecreateView.as_view(), name="product_recreate"),
@@ -23,7 +23,6 @@ urlpatterns = [
     path('university_register/', views.UniversityRegisterView.as_view(), name="university_register"),
     path('user_edit/', views.UserEditView.as_view(), name="user_edit"),
     path('user_register/', views.user_register, name="user_register"),
-    path("result",views.result,name = "result"),
     ]
 
 urlpatterns += staticfiles_urlpatterns()

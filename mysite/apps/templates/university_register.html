@@ -43,7 +43,7 @@
         <p class="Group-Item-Text">完了</p>
       </div>
     </div>
-    <form method="post" action = "{% url 'apps:result' %}" enctype="multipart/form-data" >
+    <form method="post" action = "{% url 'apps:university_register' %}" enctype="multipart/form-data" >
         <div class="row">
         <div class="col">
             <p>姓</p>
@@ -55,6 +55,11 @@
         </div>
         </div>
         <div id="name_attention">下で登録する画像に表記の名前を入力してください。</div></p>
+        <div class="row">
+          <p>大学名<br>
+              <input type="text" name="nickname" placeholder="大学名" required>
+        </div>
+        <div id="name_attention">下で登録する画像に表記の名前と大学名を入力してください。</div></p>
       {% csrf_token%}
         <p>学生証もしくは合格証明書をアップロードしてください。<br>
         <div id="dragDropArea">

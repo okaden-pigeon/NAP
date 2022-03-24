@@ -3,11 +3,8 @@ from urllib import request
 from django.shortcuts import render,redirect
 from .models import Items
 from .models import Genres
-<<<<<<< HEAD
-from .forms import EditItemForm, LoginForm
-=======
-from .forms import EditItemForm, UserInfo
->>>>>>> 0de825fa5d50beec50de1141f9355254924cdb21
+from .forms import EditItemForm, LoginForm, ItemInfo
+from .forms import UserInfo  # 上手くいかないのでコメントアウト（たいち）
 from django.contrib.auth.models import User
 
 from django.contrib.auth.views import LoginView
@@ -29,6 +26,15 @@ class IndexView(generic.TemplateView): #ListViewに変更希望
 
         context["genre"] = Genres.objects.all()
         return context
+    
+    def post(self,request,*args,**kwargs):
+        genre = request.POST["genre"]
+        if genre != "":
+            return redirect("apps:index")
+        else:
+            return redirect("apps:index")
+            
+
 
 class LoginView(LoginView):
     def get(self, request):
@@ -49,20 +55,12 @@ class MailRegisterView(generic.TemplateView):
 class MyhistoryView(LoginRequiredMixin, generic.TemplateView):
     template_name = "myhistory.html"
 
-<<<<<<< HEAD
-class MylistView(LoginRequiredMixin, generic.TemplateView): #ListViewに変更希望
-    template_name = "mylist.html"
-        
-class ProductCreateView(LoginRequiredMixin, generic.TemplateView):
-    def get_context_data(self, p, **kwargs):
-=======
 class MylistView(generic.TemplateView): #ListViewに変更
     template_name = "mylist.html"
         
 class ProductCreateView(generic.TemplateView):
     template_name = "product_create.html"
     def get_context_data(self,**kwargs):  
->>>>>>> 0de825fa5d50beec50de1141f9355254924cdb21
         items = Items.objects.all()
         genres = Genres.objects.all()
         context = super().get_context_data(**kwargs)
@@ -70,12 +68,18 @@ class ProductCreateView(generic.TemplateView):
         context["genre"] = genres
 
         # URLからitem_idを取得
-        request_item_id = p
+        # request_item_id = p
 
         return context
         
-    def post(self, request):
-        return 0
+    def post(self, request,*args,**kwargs):
+        form = ItemInfo(request.POST,request.FILES)
+        if form.is_valid():
+            print("ok")
+            form.save()
+            return redirect("apps:index")
+
+
 
 class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
 
@@ -92,6 +96,12 @@ class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
     def post(self, request):
         return 0
 
+def product(request):
+    if request.method == "POST":
+        return render(request,"product.html")
+    else:
+        return render(request,"product.html") 
+
 class ProductView(LoginRequiredMixin, generic.TemplateView):
     def get(self, p, request):
 
@@ -107,24 +117,27 @@ class UniversityRegisterView(generic.TemplateView):
     def get(self, request):
         return render(request, 'university_register.html')
 
-    def post(self, request):
-        first = self.request.POST.get("first",None)
-        last = self.request.POST.get("last",None)
-        file = self.request.POST.get("photo",None)
-        if (certification(file,first,last)):
-            return redirect("user_register.html")
-        else:
-            return render(request,"university_register.html",context = {"alert":"error"})
-        return 0
+    # def post(self, request,*args,**kwargs):
+    #     # first = self.request.POST
+    #     form = CheckForm(request.POST,request.FILES)
+    #     if form.is_valid():
+    #         print("ok")
+    #         form.save()
+    #     file = Check.objects.get(pk=1)
+    #     if ():
+    #         return redirect("user_register.html")
+    #     else:
+    #         return render(request,"university_register.html",context = {"alert":"error"})
         
-def result(request):
-    first = request.POST.get("first",None)
-    last = request.POST.get("last",None)
-    file = request.POST.get("photo",None)
-    if (certification(file,first,last)):
-        return redirect("UserRegisterView")
-    else:
-        return render(request,"university_register.html",context = {"alert":"error"}) 
+# def university_register(request):
+#     first = request.POST.get("first",None)
+#     last = request.POST.get("last",None)
+#     file = request.POST.get("photo",None)
+#     form = ItemInfo(request.POST,request.FILES)
+#     if (True):
+#         return redirect("user_register/")
+#     else:
+#         return render(request,"university_register.html",context = {"alert":"error"}) 
 
 
 class UserEditView(LoginRequiredMixin, generic.TemplateView):
@@ -136,8 +149,8 @@ class UserEditView(LoginRequiredMixin, generic.TemplateView):
 
 def user_register(request):
     if request.method == "POST":
-        form = UserInfo(request.POST,request.FILES)
-        if form.is_valid():
+       form = UserInfo(request.POST,request.FILES)
+       if form.is_valid():
             form.save()
             return redirect("/")
     else:

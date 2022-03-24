@@ -10,12 +10,20 @@ class LoginForm(AuthenticationForm):
             field.widget.attrs['placeholder'] = field.label #全てのフォームの部品にplaceholderを定義して、入力フォームにフォーム名が表示されるように指定する
 
 
-from .models import Users
+from .models import Check, Items, Users
 
 class EditItemForm(forms.Form):
     item_name = forms.CharField(max_length=40)
 
-class UserInfo(forms.ModelForm):
+# class CheckForm(forms.ModelForm):
+#     class Meta:
+#         model = Check
+#         fields = ["image"]
+
+class ItemInfo(forms.ModelForm):
     class Meta:
-        model = Users
-        fields = ("user_name","user_pass","icon")
+        model = Items
+        fields = ["item_name","item_description","icon"]
+
+class UserInfo():
+    pass

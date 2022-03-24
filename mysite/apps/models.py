@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 # Usersテーブルの情報
 class Users(models.Model):
@@ -32,7 +32,9 @@ class Items(models.Model):
   id = models.AutoField(primary_key=True)
   item_name = models.CharField(max_length = 40)
   item_description = models.CharField(max_length=500)
-  created_at = models.DateTimeField()
+  created_at = models.DateTimeField(
+    default = timezone.now()
+  )
   item_eval = models.IntegerField(
     default = 0
   )
@@ -65,6 +67,11 @@ class Images(models.Model):
         return self.image
   class Meta:
     db_table = "Images"
+
+class Check(models.Model):
+  image = models.ImageField(upload_to = "./images/")
+  def __str__(self):
+    return self.image
 
 # 商品情報と分類をつなぐためのテーブル
 class ItemClassification(models.Model):

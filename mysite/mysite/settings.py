@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # コメントアウトはずした（たいち）
-    'accounts.apps.AccountsConfig',
+    # 'accounts.apps.AccountsConfig',
+    'accounts',
     'apps.apps.AppsConfig',
 
     'django.contrib.sites',
@@ -166,6 +167,6 @@ ACCOUNT_LOGOUT_ON_GET = True  # 確認を行わずログアウトする設定
 
 
 # コメントアウトはずした（たいち）
-AUTH_USER_MODEL = 'accounts.CustomUser', #カスタムユーザーモデルを定義
+AUTH_USER_MODEL = 'accounts.CustomUser' #カスタムユーザーモデルを定義
 
  
