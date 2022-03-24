@@ -53,7 +53,7 @@ class MailRegisterView(generic.TemplateView):
 class MyhistoryView(LoginRequiredMixin, generic.TemplateView):
     template_name = "myhistory.html"
 
-class MylistView(generic.TemplateView): #ListViewに変更
+class MylistView(generic.TemplateView): 
     template_name = "mylist.html"
         
 class ProductCreateView(generic.TemplateView):
@@ -86,12 +86,6 @@ class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
     def post(self, request):
         return 0
 
-def product(request):
-    if request.method == "POST":
-        return render(request,"product.html")
-    else:
-        return render(request,"product.html") 
-
 class ProductView(LoginRequiredMixin, generic.TemplateView):
     def get(self, request):
         return render(request, 'product.html')
@@ -121,31 +115,11 @@ class UserEditView(LoginRequiredMixin, generic.TemplateView):
     def post(self, request):
         return 0
 
-def user_register(request):
-    if request.method == "POST":
-    #     form = UserInfo(request.POST,request.FILES)
-    #     if form.is_valid():
-    #         form.save()
-            return redirect("/")
-    else:
-        return render(request,"user_register.html")
 
-# class UserRegisterView(generic.TemplateView):
-#     def get(self, request):
-#         return render(request, 'user_register.html')
+class UserRegisterView(generic.TemplateView):
+    def get(self, request):
+        return render(request, 'user_register.html')
 
-#     def post(self, request):
-#         return 0
+    def post(self, request):
+        return 0
 
-    # def index(request): # product_recreate.html
-    #     queryset = User.objects.get(id=request.user.id)
-
-    #     initial_data = {
-    #         'item_name': queryset.item_name,
-    #     }
-
-    #     form = EditItemForm(
-    #         initial=initial_data
-    #     )
-
-    #     return render(request, 'apps/product_recreate.html', {"form": form})

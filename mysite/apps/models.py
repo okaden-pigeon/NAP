@@ -8,7 +8,7 @@ class Users(models.Model):
   user_name = models.CharField(max_length=20)
   user_email = models.EmailField()
   user_pass = models.CharField(max_length = 30)
-  university = models.IntegerField()
+  # university = models.IntegerField()
   icon = models.ImageField(
     upload_to='./images',
     default = "./images/default_user.png"

@@ -43,6 +43,7 @@
         <p class="Group-Item-Text">完了</p>
       </div>
     </div>
+    <div id="name_attention">名前を学生証（または合格証明証）に記載のとおり記入したのち、学生証（新入生の方は方は合格証明証）をアップロードしてください。</div>
     <form method="post" action = "{% url 'apps:university_register' %}" enctype="multipart/form-data" >
       {% csrf_token%}
         <div class="row">
@@ -55,14 +56,15 @@
             <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name = "last">
         </div>
         </div>
-        <div id="name_attention">下で登録する画像に表記の名前を入力してください。</div></p>
+        </p>
         <!-- <div class="row">
           <p>大学名<br>
               <input type="text" name="university" placeholder="大学名" required>
         </div> -->
-        <div id="name_attention">下で登録する画像に表記の名前と大学名を入力してください。</div></p>
+        <!-- <div id="name_attention">下で登録する画像に表記の名前と大学名を入力してください。</div> -->
+      <!-- </p> -->
       
-        <p>学生証もしくは合格証明書をアップロードしてください。<br>
+        <!-- <p>学生証(新入生の方は合格証明書)をアップロードしてください。</p><bri> -->
         <div id="dragDropArea">
             <div class="drag-drop-inside">
                 <p class="drag-drop-buttons">
@@ -72,7 +74,7 @@
                 <div id="previewArea"></div>
             </div>
         </div>
-        <button class="register_button" type="submit" name="submit" value="登録">大学認証</button>
+        <button class="register_button" type="submit" name="submit" value="登録">登録する</button>
     </form>
     <!-- <button href="/user_register" class="button" type="submit" name="university_register" value="大学認証">大学認証</button> -->
   </main>
