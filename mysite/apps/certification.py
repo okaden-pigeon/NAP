@@ -20,7 +20,7 @@ def certification(file,first,last):
 
     txt = tool.image_to_string(
         # imageを受け取る
-        Image.open(file),
+        file,
         lang=lang,
         builder=pyocr.builders.TextBuilder())
 

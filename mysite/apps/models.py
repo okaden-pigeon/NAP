@@ -1,5 +1,6 @@
+from re import I
 from django.db import models
-from django.utils import timezone
+from django.utils.timezone import now
 
 # Usersテーブルの情報
 class Users(models.Model):
@@ -33,7 +34,7 @@ class Items(models.Model):
   item_name = models.CharField(max_length = 40)
   item_description = models.CharField(max_length=500)
   created_at = models.DateTimeField(
-    default = timezone.now()
+    default = now
   )
   item_eval = models.IntegerField(
     default = 0
@@ -63,15 +64,21 @@ class Genres(models.Model):
 class Images(models.Model):
   id = models.AutoField(primary_key=True)
   image = models.ImageField(upload_to='./images/')
+  first = models.CharField(max_length = 20,default="")
+  last = models.CharField(max_length = 20,default = "") 
   def __str__(self):
-        return self.image
+        return self.first
   class Meta:
     db_table = "Images"
 
 class Check(models.Model):
   image = models.ImageField(upload_to = "./images/")
+  first = models.CharField(max_length = 20,default="")
+  last = models.CharField(max_length = 20,default = "")
   def __str__(self):
     return self.image
+  class Meta:
+    db_table = "Check"
 
 # 商品情報と分類をつなぐためのテーブル
 class ItemClassification(models.Model):
