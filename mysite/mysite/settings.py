@@ -41,7 +41,6 @@ INSTALLED_APPS = [
 # コメントアウトした（むら）
     # 'accounts.apps.AccountsConfig',
     'apps.apps.AppsConfig',
-
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -114,6 +113,7 @@ LANGUAGE_CODE = 'ja'
 
 TIME_ZONE = 'UTC'
 
+
 USE_I18N = True
 
 USE_L10N = True
@@ -158,8 +158,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # ローカルでの開発のためメールをコンソールで表示する
 
-LOGIN_REDIRECT_URL = 'app:home'  # ログイン成功後の遷移先の指定
-ACCOUNT_LOGOUT_REDIRECT_URL = 'app:welcome'  # ログアウト成功後の遷移先の指定
+LOGIN_URL = "/"
+LOGIN_REDIRECT_URL = 'apps:index'  # ログイン成功後の遷移先の指定
+LOGOUT_REDIRECT_URL = 'apps:login'  # ログアウト成功後の遷移先の指定
 
 ACCOUNT_LOGOUT_ON_GET = True  # 確認を行わずログアウトする設定
 

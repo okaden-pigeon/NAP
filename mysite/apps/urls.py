@@ -19,7 +19,9 @@ urlpatterns = [
     path('product/', views.ProductView.as_view(), name="product"),
     path('university_register/', views.UniversityRegisterView.as_view(), name="university_register"),
     path('user_edit/', views.UserEditView.as_view(), name="user_edit"),
-    path('user_register/', views.UserRegisterView.as_view(), name="user_register"),
+    # path('user_register/', views.UserRegisterView.as_view(), name="user_register"),
+    path("user_register/",views.SignUpView.as_view(),name="signup"),
+    path('logout/', views.Logout.as_view(), name='logout'),
     ]
 
 urlpatterns += staticfiles_urlpatterns()
