@@ -73,6 +73,53 @@ body {
   padding: 0.5rem;
 }
 
+/* university.html */
+.register_button {
+  margin-left: 25vw;
+}
+
+/* user_register */
+.col-sm-6 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user_button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #fff;
+  background-color: #2fa0f6;
+  min-width: 120px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.user_button svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+.user_button span {
+  display: none;
+}
+
+/* login.html */
+.login_form {
+  margin-left: auto;
+  margin-right: left;
+}
+
+.col-xs-4 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* product_create.html */
 #strLen {
   color: #000000;
@@ -94,6 +141,40 @@ body {
 .item_name {
 }
 
+/* index.html */
+.col {
+  text-align: center;
+}
+.card-img-top {
+  width: auto;
+  height: 30vw;
+  object-fir: cover;
+}
+
+.detail_button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #fff;
+  background-color: #2fa0f6;
+  min-width: 12vw;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.detail_button svg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24vwx;
+  height: 24vw;
+  fill: #fff;
+}
+
+.detail_button span {
+  display: none;
+}
+
 /* product.html */
 
 .product_name {
@@ -102,11 +183,20 @@ body {
 }
 
 #image_info {
-  display: inline-block;
+  float: left;
+  margin-left: 10vw;
+}
+
+#item_info {
+  float: right;
+  margin-right: 10vw;
+  margin-left: 10vw;
 }
 
 #mypic {
   position: relative;
+  width: 40vw;
+  height: 40vw;
 }
 
 #flie_input {

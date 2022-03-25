@@ -23,6 +23,7 @@
         <div class="Group-Item-CircleOuter Circle Shapeborder">
           <div class="Group-Item-CircleInner Circle Shapeborder"></div>
         </div>
+<<<<<<< HEAD
         <p class="Group-Item-Text">メールアドレス認証</p>
       </div>
       -->
@@ -30,6 +31,8 @@
         <div class="Group-Item-CircleOuter Circle Shapeborder">
           <div class="Group-Item-CircleInner Circle Shapeborder"></div>
         </div>
+=======
+>>>>>>> 5a1c839b327e2f71359f4a793cf41263154a7ab6
         <p class="Group-Item-Text">大学認証</p>
       </div>
         <div class="Group-Item isActive">
@@ -45,7 +48,7 @@
         <p class="Group-Item-Text">完了</p>
       </div>
     </div>
-    <form method="post" enctype="multipart/form-data">
+    <!-- <form method="post" enctype="multipart/form-data">
         <p>アイコン<br>
         <div id="dragDropArea">
             <div class="drag-drop-inside">
@@ -57,8 +60,8 @@
             </div>
         </div>
     </form>
-    <form method="post">
-      {% csrf_token%}
+    <form method="post" action="">
+      {% csrf_token%} -->
         <!--認証した大学名を表示-->
         <!-- <p>〇〇大学<br> -->
         <!-- <p>学部<br> -->
@@ -71,13 +74,18 @@
             <option value="low_damage">理学部</option>
             <option value="middle_damage">工学部</option>
         </select></p> -->
-        <p>ニックネーム<br>
-            <input id="area3" type="text" name="nickname" maxlength="40" onkeyup="nickname_str_len();" placeholder="ニックネーム" required>
+        <!-- <p>ニックネーム<br>
+            <input id="area3" type="text" name="user_name" maxlength="40" onkeyup="nickname_str_len();" placeholder="ニックネーム" required>
             <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
             <div id="nickname_str_len">0/40文字</div></p>
 
+            <p>メールアドレス<br>
+              <input id="area3" type="text" name="user_email" maxlength="40" onkeyup="nickname_str_len();" placeholder="メールアドレス" required>
+              <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
+              <div id="nickname_str_len">0/40文字</div></p>
+
         <label for="inputPassword5" class="form-label">パスワード</label>
-        <input type="password" id="inputPassword1" class="form-control" aria-describedby="passwordHelpBlock" requierd autocomplete="off">
+        <input type="password" id="inputPassword1" name = "user_pass" class="form-control" aria-describedby="passwordHelpBlock" requierd autocomplete="off">
         <div id="passwordHelpBlock" class="form-text">
             8文字以上16文字以内で入力してください。
         </div>
@@ -86,7 +94,26 @@
         <input type="password" id="inputPassword1_confirm" class="form-control" aria-describedby="passwordHelpBlock" required  onchange="CheckPassword_1();" autocomplete="off">
         <script type="text/javascript" src="{% static 'js/confirm.js' %}"></script>
         <button  href="/" class="button" type="submit" name="register" value="登録">登録</button>
-    </form>
+    </form> -->
+<div class="row">
+    <div class="col-sm-6">
+        <br>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {% for field in form %}
+                {{ field.label }}
+                <br>
+                {{ field }}
+                <br>
+                {{ field.errors }}
+                <br>
+            {% endfor %}
+            <p></p>
+            <button type="submit" class="user_button">登録</button>
+        </form>
+    </div>
+</div>
 
   </main>
 {% endblock %}

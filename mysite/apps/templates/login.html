@@ -16,7 +16,7 @@
 
 {% block content %}
   <main>
-    <form>
+    <!-- <form>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">メールアドレス</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required autocomplete="off">
@@ -26,6 +26,28 @@
         <input type="password" class="form-control" id="exampleInputPassword1" required autocomplete="off">
       </div>
       <button type="submit" class="btn btn-primary">ログイン</button>
+    </form> -->
+    <form action="" method="POST">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="form-group has-feedback">
+          <p></p>
+          {{ field }}
+        </div>
+      {% endfor %}
+      <div class="row">
+
+        {% for error in form.non_field_errors %}
+          <div class="alert alert-danger" role="alert">
+            <p>{{ error }}</p>
+          </div>
+        {% endfor %}
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">ログイン</button>
+        </div>
+        <!-- /.col -->
+      </div>
     </form>
   </main>
 {% endblock %}
