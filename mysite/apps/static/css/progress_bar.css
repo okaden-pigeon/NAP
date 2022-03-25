@@ -10,8 +10,8 @@
     .Group-Bar {
     position: absolute;
     top: 12px;
-    left: 10%;
-    width: 85%;
+    left: 12%;
+    width: 80%;
     height: 2px;
     background-color: #eaeaea;/*バーの色*/
     z-index: -1;
