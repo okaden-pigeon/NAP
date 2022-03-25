@@ -7,8 +7,8 @@
           menu
         </button>
         <ul class="nav__wrapper">
-
-          <li class="nav__item"><a class="nav-link" style="color: #FFFFFF;" href="{% url 'apps:logout' %}"></a></li>
+          <li class="nav__item"><a href="/index" style="text-decoration: none;">ホーム</a></li>
+          <li class="nav__item"><a class="nav-link" href="{% url 'apps:logout' %}">ログアウト</a></li>
           <!-- <li class="nav__item"><a href="/mylist" style="text-decoration: none;">出品一覧</a></li> -->
           <!-- <li class="nav__item"><a href="/user_edit" style="text-decoration: none;">アカウント</a></li> -->
         </ul>
@@ -24,15 +24,14 @@
     <form class="form-inline" action="" method="post">
       {% csrf_token %}
       <input class="form-control mr-sm-2" type="search" placeholder="何をお探しですか" value="{{query}}" name="q" aria-label="Search">
-      <button class="btn" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6;">検索</button>
-
-      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" style="margin-left: 50px;" name = "genre">
+      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name = "genre">
         <option selected disabled>カテゴリー選択</option>
         <!-- 分類の表示-->
         {% for i in genre %}
         <option value="{{i.genre_name}}">{{i.genre_name}}</option>
         {% endfor %}
       </select>
+      <button class="btn" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6; margin-left: 3vw;">検索</button>
     </form>
   </nav>
   <main>

@@ -85,12 +85,21 @@ body {
   margin-right: auto;
 }
 
+.Group {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Group-Item-Text {
+  font-family: "メイリオ";
+}
+
 .user_button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   color: #fff;
-  background-color: #2fa0f6;
+  background-color: #f0f8ff;
   min-width: 120px;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -178,30 +187,56 @@ body {
 /* product.html */
 
 .product_name {
-  font-size: 20px;
-  font-size: 2.0rem;
+  font-size: 3vw;
+  font-weight:  bold;
 }
 
 #image_info {
   float: left;
-  margin-left: 10vw;
+  margin-left: 2vw;
 }
 
 #item_info {
   float: right;
-  margin-right: 10vw;
-  margin-left: 10vw;
+  margin-right: 2vw;
+  margin-left: 4vw;
 }
 
+.seller_name {
+  font-size
+}
+
+.item_description {
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  background: #d6ebff;
+  box-shadow: 0px 0px 0px 10px #d6ebff;
+  border: dashed 2px white;
+}
+
+.item_description p {
+  margin: 0;
+  padding: 0;
+}
+.category{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+  background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
+.category p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+
+}
 #mypic {
   position: relative;
-  width: 40vw;
-  height: 40vw;
+  width: 30vw;
+  height: auto;
 }
 
-#flie_input {
-
-}
 
 /*
 .slide_button_forward{

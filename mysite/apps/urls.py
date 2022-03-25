@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib.staticfiles.urls import static 
+from django.contrib.staticfiles.urls import static
 import sys
 sys.path.append("../")
 
