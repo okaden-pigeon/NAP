@@ -11,9 +11,11 @@ class Items(models.Model):
   created_at = models.DateTimeField(
     default = now
   )
+  # 評価をしないといけない場合に備えて項目を設定
   item_eval = models.IntegerField(
     default = 0
   )
+  # 取引したかどうかの機能を実装する時のための項目
   is_deal = models.BooleanField(
     default = False
   )
@@ -46,15 +48,10 @@ class Images(models.Model):
   class Meta:
     db_table = "Images"
 
-# class Check(models.Model):
-#   image = models.ImageField(upload_to = "./images/")
-#   first = models.CharField(max_length = 20,default="")
-#   last = models.CharField(max_length = 20,default = "")
-#   def __str__(self):
-#     return self.image
-#   class Meta:
-#     db_table = "Check"
 
+
+
+# --------------------今後実装したいmodel-------------------------
 # 商品情報と分類をつなぐためのテーブル
 # class ItemClassification(models.Model):
 #   item_id = models.IntegerField()
@@ -83,23 +80,8 @@ class Images(models.Model):
 #   class Meta:
 #     db_table = "Likes"
 
-# Usersテーブルの情報
-# class Users(models.Model):
-#   id = models.AutoField(primary_key=True)
-#   user_name = models.CharField(max_length=20)
-#   user_email = models.EmailField()
-#   user_pass = models.CharField(max_length = 30)
-#   # university = models.IntegerField()
-#   icon = models.ImageField(
-#     upload_to='./images',
-#     default = "./images/default_user.png"
-#     )
-#   def __str__(self):
-#         return self.user_name
-#   class Meta:
-#     db_table = "Users"
 
-# Universitiesテーブルの情報
+# 大学情報を情報を保存するためのテーブル
 # class Universities(models.Model):
 #   id = models.AutoField(primary_key=True)
 #   university_name = models.CharField(max_length=30)
