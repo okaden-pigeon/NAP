@@ -1,5 +1,5 @@
 .Group {
-    margin-bottom: 24px;
+    margin: auto;
     position: relative;
     width: 100%;
     max-width: 320px;
@@ -10,8 +10,8 @@
     .Group-Bar {
     position: absolute;
     top: 12px;
-    left: 5%;
-    width: 90%;
+    left: 10%;
+    width: 85%;
     height: 2px;
     background-color: #eaeaea;/*バーの色*/
     z-index: -1;
