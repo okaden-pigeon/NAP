@@ -31,6 +31,7 @@
       {% csrf_token %}
       {% for field in form %}
         <div class="form-group has-feedback">
+          <p></p>
           {{ field }}
         </div>
       {% endfor %}
