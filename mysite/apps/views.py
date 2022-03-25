@@ -1,148 +1,52 @@
-from re import I, template
-from PIL import Image
-from urllib import request
 from django.shortcuts import render,redirect
-from .models import Images, Items
-from .models import Genres
-from .forms import  CheckForm, EditItemForm,ItemInfo, LoginForm, UserCreateForm
-from django.contrib.auth.models import User
-from django.contrib.auth import login,authenticate
-
-from django.contrib.auth.views import LoginView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView, ListView,CreateView
-
-from django.views import generic
-from .certification import certification
-from django.contrib.auth.views import(LoginView, LogoutView)
 from django.urls import reverse_lazy
+from django.views.generic import CreateView,TemplateView
 
-# ログイン機能を必須にするには第一引数に(LoginRequiredMixin)を入れる
-class IndexView(generic.TemplateView): #ListViewに変更
-    template_name = "index.html"
-    login_url = '/'
-    def get_context_data(self,**kwargs):
-        context = super().get_context_data(**kwargs)
-        context["item"] = Items.objects.all().values()
-        for i in context["item"]:
-            i["icon"] = i["icon"].replace("static/","")
+from django.contrib.auth import login,authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView, LogoutView
 
-        context["genre"] = Genres.objects.all()
-        return context
+from PIL import Image
 
-    def post(self,request,*args,**kwargs):
-        genre = request.POST["genre"]
-        if genre != "":
-            return redirect("apps:index")
-        else:
-            return redirect("apps:index")
+from .models import Items,Genres
+from .forms import  ItemInfo, LoginForm, UserCreateForm
+from .certification import certification
 
-
-
+# ログインページ
 class LoginView(LoginView):
     form_class = LoginForm
     template_name = "login.html"
-    # def get(self, request):
-    #     return render(request, 'login.html')
-
-    # def post(self, request):
-    #     form_class = LoginForm
-    #     return 0
-
-class MailRegisterView(generic.TemplateView):
-    def get(self, request):
-        return render(request, 'mail_register.html')
-
-    def post(self, request):
-        return 0
-
-class MyhistoryView(LoginRequiredMixin, generic.TemplateView):
-    template_name = "myhistory.html"
-
-class MylistView(generic.TemplateView):
-    template_name = "mylist.html"
-
-class ProductCreateView(generic.TemplateView):
-    template_name = "product_create.html"
-    login_url = '/'
-    def get_context_data(self,**kwargs):
-        items = Items.objects.all()
-        genres = Genres.objects.all()
-        context = super().get_context_data(**kwargs)
-        context["item"] = items
-        context["genre"] = genres
-        return context
-
-    def post(self, request,*args,**kwargs):
-        form = ItemInfo(request.POST,request.FILES)
-        if form.is_valid():
-            print("ok")
-            form.save()
-            return redirect("apps:index")
 
 
-
-class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
-    login_url = '/'
-    def get_context_data(self,**kwargs):
-        genres = Genres.objects.all()
-        context = super().get_context_data(**kwargs)
-        context["genre"] = genres
-        return context
-
-    def post(self, request):
-        return 0
-
-class ProductView(generic.TemplateView):
-    login_url = '/'
-    def get(self, request):
-        return render(request, 'product.html')
+# ログアウト機能
+class Logout(LoginRequiredMixin, LogoutView):
+    template_name = 'login.html'
 
 
-
-class UniversityRegisterView(generic.TemplateView):
+# ユーザー登録フロー1段階目、大学認証ページ
+class UniversityRegisterView(TemplateView):
     def get(self, request):
         return render(request, 'university_register.html')
 
     def post(self, request,*args,**kwargs):
+        # POSTにより画像データ、氏名を取得後certificetion.pyで認証
         img = Image.open(request.FILES["image"])
         first = request.POST["first"]
         last = request.POST["last"]
         if certification(img,first,last):
+            # 認証成功時は次のページへ遷移
             return redirect("apps:signup")
         else:
+            # 認証失敗時は再度登録画面が表示される
             return redirect("apps:university_register")
 
 
-
-class UserEditView(LoginRequiredMixin, generic.TemplateView):
-    login_url = '/'
-    def get(self, request):
-        return render(request, 'user_edit.html')
-
-    def post(self, request):
-        return 0
-
-
-class UserRegisterView(generic.TemplateView):
-    def get(self, request):
-        return render(request, 'user_register.html')
-
-    def post(self, request, *args, **kwargs):
-        form = UserCreateForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('user_name')
-            password = form.cleaned_data.get('user_pass')
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect("/index")
-
+# ユーザー登録フロー2段階目、ユーザー情報入力ページ
 class SignUpView(CreateView):
     form_class = UserCreateForm
     template_name = "user_register.html"
+    # ユーザー登録成功時に遷移するページの指定
     success_url = reverse_lazy("apps:index")
-
     def form_valid(self,form):
         user = form.save()
         login(self.request,user,backend='django.contrib.auth.backends.ModelBackend')
@@ -150,6 +54,82 @@ class SignUpView(CreateView):
         return redirect(self.get_success_url())
 
 
-class Logout(LoginRequiredMixin, LogoutView):
-    """ログアウトページ"""
-    template_name = 'accounts/login.html'
+# アプリケーションのトップページ
+class IndexView(LoginRequiredMixin,TemplateView): 
+    template_name = "index.html"
+    login_url = '/'
+    def get_context_data(self,**kwargs):
+        context = super().get_context_data(**kwargs)
+        # modelから商品情報を取得
+        context["item"] = Items.objects.all().values()
+        # 取得した商品の画像情報のurlに余計ば部分があるので削除する
+        for item in context["item"]:
+            item["icon"] = item["icon"].replace("static/","")
+        # modelからジャンル情報を取得
+        context["genre"] = Genres.objects.all()
+        return context
+
+    # TODO 検索機能実装のためのPOST
+    def post(self,request,*args,**kwargs):
+        return 0
+
+
+# 商品登録ページ
+class ProductCreateView(LoginRequiredMixin,TemplateView):
+    template_name = "product_create.html"
+    login_url = '/'
+    def get_context_data(self,**kwargs):
+        # modelからジャンル情報を取得
+        genres = Genres.objects.all()
+        context = super().get_context_data(**kwargs)
+        context["genre"] = genres
+        return context
+
+    def post(self, request,*args,**kwargs):
+        form = ItemInfo(request.POST,request.FILES)
+        # 登録成功後、indexページへと遷移
+        if form.is_valid():
+            form.save()
+            return redirect("apps:index")
+
+
+
+# ----------------------------------以下未実装のview-------------------------------------
+
+# 購入・出品履歴の表示（未実装)
+# class MyhistoryView(LoginRequiredMixin, TemplateView):
+#     template_name = "myhistory.html"
+
+
+# いいね機能実装後お気に入りリストの保管（未実装)
+# class MylistView(TemplateView):
+#     template_name = "mylist.html"
+
+
+# 商品情報の編集ページ（未実装)
+# class ProductRecreateView(LoginRequiredMixin, TemplateView):
+#     login_url = '/'
+#     def get_context_data(self,**kwargs):
+#         genres = Genres.objects.all()
+#         context = super().get_context_data(**kwargs)
+#         context["genre"] = genres
+#         return context
+#     def post(self, request):
+#         return 0
+
+
+# 各商品ごとのページ(未実装)
+# class ProductView(TemplateView):
+#     login_url = '/'
+#     def get(self, request):
+#         return render(request, 'product.html')
+
+
+# ユーザー情報の編集ページ(未実装)
+# class UserEditView(LoginRequiredMixin, TemplateView):
+#     login_url = '/'
+#     def get(self, request):
+#         return render(request, 'user_edit.html')
+#     def post(self, request):
+#         return 0
+
