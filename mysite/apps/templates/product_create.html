@@ -7,7 +7,8 @@
           menu
         </button>
         <ul class="nav__wrapper">
-          <!-- <li class="nav__item"><a href="/" style="text-decoration: none;">ホーム</a></li> -->
+          <li class="nav__item"><a href="/index" style="text-decoration: none;">ホーム</a></li>
+          <li class="nav__item"><a class="nav-link" href="{% url 'apps:logout' %}">ログアウト</a></li>
           <!-- <li class="nav__item"><a href="/mylist" style="text-decoration: none;">出品一覧</a></li>
           <li class="nav__item"><a href="/user_edit" style="text-decoration: none;">アカウント</a></li> -->
         </ul>
@@ -20,7 +21,7 @@
 {% block content %}
 <main>
   <form method="post"  action = "" enctype="multipart/form-data">
-    {% csrf_token%}
+    {% csrf_token %}
       <div id="dragDropArea">
           <div class="drag-drop-inside">
               <p class="drag-drop-buttons">
