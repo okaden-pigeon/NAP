@@ -1,32 +1,7 @@
-from re import I
 from django.db import models
 from django.utils.timezone import now
 
-# Usersテーブルの情報
-# class Users(models.Model):
-#   id = models.AutoField(primary_key=True)
-#   user_name = models.CharField(max_length=20)
-#   user_email = models.EmailField()
-#   user_pass = models.CharField(max_length = 30)
-#   # university = models.IntegerField()
-#   icon = models.ImageField(
-#     upload_to='./images',
-#     default = "./images/default_user.png"
-#     )
-#   def __str__(self):
-#         return self.user_name
-#   class Meta:
-#     db_table = "Users"
 
-# Universitiesテーブルの情報
-# class Universities(models.Model):
-#   id = models.AutoField(primary_key=True)
-#   university_name = models.CharField(max_length=30)
-#   university_domain = models.URLField()
-#   def __str__(self):
-#         return self.university_name
-#   class Meta:
-#     db_table = "Universities"
 
 # Itemsテーブルの情報
 class Items(models.Model):
@@ -107,3 +82,29 @@ class Images(models.Model):
 #   item_id = models.IntegerField()
 #   class Meta:
 #     db_table = "Likes"
+
+# Usersテーブルの情報
+# class Users(models.Model):
+#   id = models.AutoField(primary_key=True)
+#   user_name = models.CharField(max_length=20)
+#   user_email = models.EmailField()
+#   user_pass = models.CharField(max_length = 30)
+#   # university = models.IntegerField()
+#   icon = models.ImageField(
+#     upload_to='./images',
+#     default = "./images/default_user.png"
+#     )
+#   def __str__(self):
+#         return self.user_name
+#   class Meta:
+#     db_table = "Users"
+
+# Universitiesテーブルの情報
+# class Universities(models.Model):
+#   id = models.AutoField(primary_key=True)
+#   university_name = models.CharField(max_length=30)
+#   university_domain = models.URLField()
+#   def __str__(self):
+#         return self.university_name
+#   class Meta:
+#     db_table = "Universities"
