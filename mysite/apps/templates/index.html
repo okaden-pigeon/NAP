@@ -46,13 +46,8 @@
         <div class="card-body">
           <h5 class="card-title">{{i.item_name}}</h5>
           <p>{{i.item_description}}</p>
-<<<<<<< HEAD
-          <form action="" method="post">
-            <input type="submit" value="送信">詳細を見る
-=======
           <form action="" method="POST">{% csrf_token %}
             <button class="detail_button" type="submit" name="item_id">詳細を見る</button>
->>>>>>> 5a1c839b327e2f71359f4a793cf41263154a7ab6
           </form>
         </div>
       </div>
