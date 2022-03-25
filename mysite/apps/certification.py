@@ -23,9 +23,8 @@ def certification(file,first,last):
         file,
         lang=lang,
         builder=pyocr.builders.TextBuilder())
-    print(itaizi.to_seizi("齋藤"))
 
-    if (itaizi.to_seizi(first) in txt or itaizi.to_itaizi(first) in txt) and (itaizi.to_seizi(last) in txt or itaizi.to_itaizi(last) in txt) :
+    if ((itaizi.to_seizi(first) in txt) or (itaizi.to_itaizi(first) in txt)) and ((itaizi.to_seizi(last) in txt) or (itaizi.to_itaizi(last) in txt)) :
         txt = ""
         return True
     else:
