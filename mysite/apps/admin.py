@@ -8,6 +8,8 @@ from .models import Items,Genres,Images
 admin.site.register(Items)
 admin.site.register(Genres)
 admin.site.register(Images)
+
+# 今後実装したいmodelの情報
 # admin.site.register(Users)
 # admin.site.register(Universities)
 # admin.site.register(ItemClassification)
