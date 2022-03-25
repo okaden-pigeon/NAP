@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from .models import Users,Items,Genres,Images
+from .models import Items,Genres,Images
 # ,ItemClassification,ItemImage,UserListing,Likes
 
 # Register your models here.
-admin.site.register(Users)
+# admin.site.register(Users)
 # admin.site.register(Universities)
 admin.site.register(Items)
 admin.site.register(Genres)

@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import  Images, Items, Users
+from .models import  Images, Items
 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
