@@ -110,7 +110,7 @@ class UniversityRegisterView(generic.TemplateView):
         first = request.POST["first"]
         last = request.POST["last"]
         if certification(img,first,last):
-            return redirect("apps:user_register")
+            return redirect("apps:signup")
         else:
             return redirect("apps:university_register")
  
