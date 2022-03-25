@@ -19,14 +19,14 @@ class Users(models.Model):
     db_table = "Users"
 
 # Universitiesテーブルの情報
-class Universities(models.Model):
-  id = models.AutoField(primary_key=True)
-  university_name = models.CharField(max_length=30)
-  university_domain = models.URLField()
-  def __str__(self):
-        return self.university_name
-  class Meta:
-    db_table = "Universities"
+# class Universities(models.Model):
+#   id = models.AutoField(primary_key=True)
+#   university_name = models.CharField(max_length=30)
+#   university_domain = models.URLField()
+#   def __str__(self):
+#         return self.university_name
+#   class Meta:
+#     db_table = "Universities"
 
 # Itemsテーブルの情報
 class Items(models.Model):
