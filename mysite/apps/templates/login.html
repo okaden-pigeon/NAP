@@ -8,7 +8,7 @@
         </button>
         <ul class="nav__wrapper">
           <!-- <li class="nav__item"><a href="/login.html">ログイン</a></li> -->
-          <li class="nav__item"><a href="/university_register">新規登録</a></li>
+          <li class="nav__item"><a href="/university_register" style="text-decoration: none;">新規登録</a></li>
         </ul>
       </nav>
     </div>
@@ -31,6 +31,7 @@
       {% csrf_token %}
       {% for field in form %}
         <div class="form-group has-feedback">
+          <p></p>
           {{ field }}
         </div>
       {% endfor %}

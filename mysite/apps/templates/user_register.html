@@ -18,20 +18,14 @@
   <main>
     <div class="Group">
       <div class="Group-Bar"></div>
-        <div class="Group-Item">
-          <div class="Group-Item-CircleOuter Circle Shapeborder">
-          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
-        </div>
-        <p class="Group-Item-Text">メールアドレス認証</p>
-      </div>
-        <div class="Group-Item">
-          <div class="Group-Item-CircleOuter Circle Shapeborder">
+      <div class="Group-Item">
+        <div class="Group-Item-CircleOuter Circle Shapeborder">
           <div class="Group-Item-CircleInner Circle Shapeborder"></div>
         </div>
         <p class="Group-Item-Text">大学認証</p>
       </div>
-        <div class="Group-Item isActive">
-          <div class="Group-Item-CircleOuter Circle Shapeborder isActive">
+      <div class="Group-Item isActive">
+        <div class="Group-Item-CircleOuter Circle Shapeborder isActive">
           <div class="Group-Item-CircleInner Circle Shapeborder isActive"></div>
         </div>
         <p class="Group-Item-Text">ユーザー登録</p>
@@ -39,7 +33,7 @@
       <div class="Group-Item">
         <div class="Group-Item-CircleOuter Circle Shapeborder">
           <div class="Group-Item-CircleInner Circle Shapeborder"></div>
-          </div>
+        </div>
         <p class="Group-Item-Text">完了</p>
       </div>
     </div>
@@ -73,7 +67,7 @@
             <input id="area3" type="text" name="user_name" maxlength="40" onkeyup="nickname_str_len();" placeholder="ニックネーム" required>
             <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
             <div id="nickname_str_len">0/40文字</div></p>
-        
+
             <p>メールアドレス<br>
               <input id="area3" type="text" name="user_email" maxlength="40" onkeyup="nickname_str_len();" placeholder="メールアドレス" required>
               <script type="text/javascript" src="{% static 'js/count.js' %}"></script>
@@ -93,17 +87,19 @@
 <div class="row">
     <div class="col-sm-6">
         <br>
-        <h1>ユーザ登録</h1>
         <form method="POST">
             {% csrf_token %}
             {{ form.non_field_errors }}
             {% for field in form %}
                 {{ field.label }}
+                <br>
                 {{ field }}
+                <br>
                 {{ field.errors }}
                 <br>
             {% endfor %}
-            <button type="submit">登録</button>
+            <p></p>
+            <button type="submit" class="user_button">登録</button>
         </form>
     </div>
 </div>

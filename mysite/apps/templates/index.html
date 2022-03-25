@@ -7,8 +7,8 @@
           menu
         </button>
         <ul class="nav__wrapper">
-          
-          <li class="nav__item"><a class="nav-link" href="{% url 'apps:logout' %}"></a></li>
+
+          <li class="nav__item"><a class="nav-link" style="color: #FFFFFF;" href="{% url 'apps:logout' %}"></a></li>
           <!-- <li class="nav__item"><a href="/mylist" style="text-decoration: none;">出品一覧</a></li> -->
           <!-- <li class="nav__item"><a href="/user_edit" style="text-decoration: none;">アカウント</a></li> -->
         </ul>
@@ -22,7 +22,7 @@
   <nav class="navbar navbar-light bg-light">
     <!-- 検索機能-->
     <form class="form-inline" action="" method="post">
-      {% csrf_token%}
+      {% csrf_token %}
       <input class="form-control mr-sm-2" type="search" placeholder="何をお探しですか" value="{{query}}" name="q" aria-label="Search">
       <button class="btn" type="submit" value="送信" style="color: #fff; background-color: #2fa0f6;">検索</button>
 
@@ -46,7 +46,9 @@
         <div class="card-body">
           <h5 class="card-title">{{i.item_name}}</h5>
           <p>{{i.item_description}}</p>
-
+          <form action="" method="POST">{% csrf_token %}
+            <button class="detail_button" type="submit" name="item_id">詳細を見る</button>
+          </form>
         </div>
       </div>
     </div>

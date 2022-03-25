@@ -18,7 +18,7 @@ from django.contrib.auth.views import(LoginView, LogoutView)
 from django.urls import reverse_lazy
 
 # ログイン機能を必須にするには第一引数に(LoginRequiredMixin)を入れる
-class IndexView(LoginRequiredMixin,generic.TemplateView): #ListViewに変更
+class IndexView(generic.TemplateView): #ListViewに変更
     template_name = "index.html"
     login_url = '/'
     def get_context_data(self,**kwargs):
@@ -29,14 +29,14 @@ class IndexView(LoginRequiredMixin,generic.TemplateView): #ListViewに変更
 
         context["genre"] = Genres.objects.all()
         return context
-    
+
     def post(self,request,*args,**kwargs):
         genre = request.POST["genre"]
         if genre != "":
             return redirect("apps:index")
         else:
             return redirect("apps:index")
-            
+
 
 
 class LoginView(LoginView):
@@ -59,20 +59,20 @@ class MailRegisterView(generic.TemplateView):
 class MyhistoryView(LoginRequiredMixin, generic.TemplateView):
     template_name = "myhistory.html"
 
-class MylistView(generic.TemplateView): 
+class MylistView(generic.TemplateView):
     template_name = "mylist.html"
-        
-class ProductCreateView(LoginRequiredMixin,generic.TemplateView):
+
+class ProductCreateView(generic.TemplateView):
     template_name = "product_create.html"
     login_url = '/'
-    def get_context_data(self,**kwargs):  
+    def get_context_data(self,**kwargs):
         items = Items.objects.all()
         genres = Genres.objects.all()
         context = super().get_context_data(**kwargs)
         context["item"] = items
         context["genre"] = genres
         return context
-        
+
     def post(self, request,*args,**kwargs):
         form = ItemInfo(request.POST,request.FILES)
         if form.is_valid():
@@ -93,13 +93,12 @@ class ProductRecreateView(LoginRequiredMixin, generic.TemplateView):
     def post(self, request):
         return 0
 
-class ProductView(LoginRequiredMixin, generic.TemplateView):
+class ProductView(generic.TemplateView):
     login_url = '/'
     def get(self, request):
         return render(request, 'product.html')
 
-    def post(self, request):
-        return 0
+
 
 class UniversityRegisterView(generic.TemplateView):
     def get(self, request):
@@ -113,7 +112,7 @@ class UniversityRegisterView(generic.TemplateView):
             return redirect("apps:signup")
         else:
             return redirect("apps:university_register")
- 
+
 
 
 class UserEditView(LoginRequiredMixin, generic.TemplateView):
@@ -149,7 +148,7 @@ class SignUpView(CreateView):
         login(self.request,user,backend='django.contrib.auth.backends.ModelBackend')
         self.object = user
         return redirect(self.get_success_url())
-    
+
 
 class Logout(LoginRequiredMixin, LogoutView):
     """ログアウトページ"""

@@ -16,44 +16,48 @@
 
 {% block content %}
   <main>
-    <div class="Group">
-      <div class="Group-Bar"></div>
-        <div class="Group-Item">
-          <div class="Group-Item-CircleOuter Circle Shapeborder">
-          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
-        </div>
-        <p class="Group-Item-Text">メールアドレス認証</p>
-      </div>
-        <div class="Group-Item isActive">
-          <div class="Group-Item-CircleOuter Circle Shapeborder isActive">
-          <div class="Group-Item-CircleInner Circle Shapeborder isActive"></div>
-        </div>
-        <p class="Group-Item-Text">大学認証</p>
-      </div>
-        <div class="Group-Item">
-          <div class="Group-Item-CircleOuter Circle Shapeborder">
-          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
-        </div>
-        <p class="Group-Item-Text">ユーザー登録</p>
-      </div>
-      <div class="Group-Item">
-        <div class="Group-Item-CircleOuter Circle Shapeborder">
-          <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+      <div class="Group">
+        <div class="Group-Bar"></div>
+          <div class="Group-Item isActive">
+            <div class="Group-Item-CircleOuter Circle Shapeborder isActive">
+            <div class="Group-Item-CircleInner Circle Shapeborder isActive"></div>
           </div>
-        <p class="Group-Item-Text">完了</p>
+          <p class="Group-Item-Text">大学認証</p>
+        </div>
+          <div class="Group-Item">
+            <div class="Group-Item-CircleOuter Circle Shapeborder">
+            <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+          </div>
+          <p class="Group-Item-Text">ユーザー登録</p>
+        </div>
+        <div class="Group-Item">
+          <div class="Group-Item-CircleOuter Circle Shapeborder">
+            <div class="Group-Item-CircleInner Circle Shapeborder"></div>
+            </div>
+          <p class="Group-Item-Text">完了</p>
+        </div>
       </div>
     </div>
     <div id="name_attention">名前を学生証（または合格証明証）に記載のとおり記入したのち、学生証（新入生の方は合格証明証）をアップロードしてください。</div>
     <form method="post" action = "{% url 'apps:university_register' %}" enctype="multipart/form-data" >
       {% csrf_token%}
+          <div id="dragDropArea">
+            <div class="drag-drop-inside">
+                <p class="drag-drop-buttons">
+                    <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="image" onChange="photoPreview(event)">
+                </p>
+                <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
+                <div id="previewArea"></div>
+           </div>
+        </div>
         <div class="row">
         <div class="col">
             <p>姓</p>
-            <input type="text" class="form-control" placeholder="First name" aria-label="First name" name = "first">
+            <input type="text" class="form-control" placeholder="Last name" aria-label="First name" name = "first">
         </div>
         <div class="col">
             <p>名</p>
-            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name = "last">
+            <input type="text" class="form-control" placeholder="First name" aria-label="Last name" name = "last">
         </div>
         </div>
         </p>
@@ -63,17 +67,8 @@
         </div> -->
         <!-- <div id="name_attention">下で登録する画像に表記の名前と大学名を入力してください。</div> -->
       <!-- </p> -->
-      
+
         <!-- <p>学生証(新入生の方は合格証明書)をアップロードしてください。</p><bri> -->
-        <div id="dragDropArea">
-            <div class="drag-drop-inside">
-                <p class="drag-drop-buttons">
-                    <input id="fileInput" type="file" accept="image/*" value="ファイルを選択" name="image" onChange="photoPreview(event)">
-                </p>
-                <p class="drag-drop-info">または、ドラッグ&ドロップ</p>
-                <div id="previewArea"></div>
-            </div>
-        </div>
         <button class="register_button" type="submit" name="submit" value="登録">登録する</button>
     </form>
     <!-- <button href="/user_register" class="button" type="submit" name="university_register" value="大学認証">大学認証</button> -->
